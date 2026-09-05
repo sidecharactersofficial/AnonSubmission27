@@ -1,0 +1,16 @@
+# Reproduction environment. Versions below are the exact combination on which
+# every archived result in results/ was produced and on which the paper's
+# numbers were derived.
+
+torch==2.9.1
+numpy==2.4.0
+pandas==2.3.3
+pyarrow==24.0.0
+scipy==1.16.3
+foolbox==3.3.4
+
+# Install with the CUDA 12.8 wheel index (same build used for the archives):
+#   pip install --extra-index-url https://download.pytorch.org/whl/cu128 -r requirements.txt
+#
+# For CPU-only reproduction, drop the extra index; runs then take longer and
+# floating-point results may differ in the last few significant digits.

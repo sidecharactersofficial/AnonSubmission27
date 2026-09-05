@@ -1,0 +1,9 @@
+# SHA-256 of the preprocessed tensors consumed by the shipped scripts.
+# Verify with:  sha256sum -c dataset_sha256.txt   (run from the repo root)
+# nsl-kdd-*.csv are regenerated deterministically by download_data.py.
+data/cicids2017_train.parquet  8e76734fa0bae7ce90832758e6978855fc9cd26a6b5022e44e63181c5b7695e3
+data/cicids2017_test.parquet   4dff50497e77510d57cf7b495c0f70b880fbdcd536882149fe3ff40e054a1665
+data/unsw_nb15_train.parquet   6d5cf5c79eee50ff270a038dc901353d29a322c9f86747c088b2007375e10544
+data/unsw_nb15_test.parquet    fd5420771f657d622a0062e1385cb69772a7751e405ab93d1f6fff2766d853e1
+data/nsl-kdd-train.csv         56aeb5a741fb89219105f67c573215246db181adb4c6a58d09aa383d2acb74af
+data/nsl-kdd-test.csv          e0e48f5bcfce97e9599a2d776562d270e2e02f4dbdc2beb15db6c9eb0d9bfcf3
