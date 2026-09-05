@@ -38,7 +38,7 @@ For $K=2$, enumerate all pairs of groups.
 ### Positive
 - Eliminates invalid-state artifacts
 - Guarantees coverage of the discrete state space within budget $K$
-- Produces reproducible, deterministic results for fixed PGD initialization
+- Produces deterministic discrete-state coverage for a fixed attack initialization; stochastic continuous optimization remains subject to random-start variance
 - Faithful reproduction yields 40.36% robust accuracy (vs. 29.10%)
 
 ### Negative

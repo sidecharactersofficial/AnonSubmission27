@@ -29,6 +29,7 @@ shipped checkpoints, scripts, and result files.
 | Mixed-norm enumeration | `canonical/eval_mixed_norm.py` |
 | Certified robustness bounds | `canonical/run_crown_vs_ibp.py` |
 | Independent attack validation | `canonical/eval_jsma_vs_exhaustive.py` |
+| Review verification checklist | `REVIEW_CHECKLIST.md` |
 | Reproduce paper tables | `canonical/consolidated_canonical_table.py` |
 | Historical methodology changes | `PROVENANCE.md` |
 | Known limitations | `LIMITATIONS.md` |
@@ -40,6 +41,7 @@ shipped checkpoints, scripts, and result files.
 .
 ├── README.md                     Overview and quick start
 ├── REVIEWER_GUIDE.md             Entry point for reviewers
+├── REVIEW_CHECKLIST.md            Bounded verification checklist
 ├── CLAIM_MAP.md                  Scientific claim → evidence navigation
 ├── VERIFY.md                     Fast verification without full reproduction
 ├── REPRODUCE.md                  Full reproduction instructions

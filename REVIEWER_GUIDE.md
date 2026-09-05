@@ -18,80 +18,36 @@ to inspect the repository linearly.
 | Historical methodology changes | `PROVENANCE.md` |
 | Known limitations | `LIMITATIONS.md` |
 | Claim-to-evidence mapping | `CLAIM_MAP.md` |
+| Review verification checklist | `REVIEW_CHECKLIST.md` |
 | Fast verification | `VERIFY.md` |
 | Full reproduction | `REPRODUCE.md` |
 
-## Repository Structure
-
-```
-.
-├── README.md                     Overview and quick start
-├── REVIEWER_GUIDE.md             This file — start here
-├── CLAIM_MAP.md                  Scientific claim → evidence navigation
-├── VERIFY.md                     Fast verification without full reproduction
-├── REPRODUCE.md                  Full reproduction instructions
-├── LIMITATIONS.md                Explicit boundaries of the artifact
-├── PROVENANCE.md                 Methodological history and superseded code
-├── REPRODUCIBILITY_LEVELS.md     Classification of reproduction guarantees
-├── EXPECTED_OUTPUTS.md           What to expect when running each experiment
-├── CITATION_TO_ARTIFACT.md       Versioning and citation information
-├── Makefile                      Reproducibility pipeline
-├── requirements.txt              Pinned Python environment
-├── data_scripts/                  Dataset download and preprocessing scripts
-│   ├── download_data.py           NSL-KDD
-│   ├── download_cicids2017.py     CICIDS2017
-│   └── download_unsw_nb15.py      UNSW-NB15
-├── dataset_links.md              Dataset acquisition and integrity anchors
-├── app/                          Shared library: models, attacks, loaders, training
-├── canonical/                    Final evaluators supporting reported conclusions
-├── diagnostics/                  Historical implementations for provenance
-├── verification/                 Integrity checks and fresh-vs-archive comparison
-├── models/                       Trained checkpoints (SHA-256 pinned)
-├── manifest/                     SHA-256 manifests for datasets and checkpoints
-├── results/                      Archived experimental outputs
-│   ├── foolbox/                  Multi-seed EXH K=1 sweeps
-│   ├── certificates/             CROWN vs IBP certified rates
-│   ├── consolidated/             Aggregated canonical tables
-│   ├── section3/                 Faithful AdvGuard diagnostic
-│   ├── cw/                       C&W survivor records
-│   └── unified/                  Superseded masking-gap analysis
-└── docs/
-    ├── threat_model.md           Mixed-norm threat model specification
-    ├── methodology.md            Evaluation methodology and conventions
-    └── adr/                      Architectural Decision Records
-        ├── ADR-001-canonical-exhaustive-mixed-norm-evaluation.md
-        ├── ADR-002-statistical-re-evaluation.md
-        ├── ADR-003-independent-attack-validation.md
-        └── ADR-004-canonical-vs-fresh-reproduction.md
-```
-
 ## Suggested Review Paths
 
-### Fast review (~15 minutes)
-1. Read `README.md` methodology section
-2. Read `CLAIM_MAP.md`
-3. Inspect one canonical evaluator (`canonical/eval_deepfool_k1.py` or `canonical/eval_mixed_norm.py`)
-4. Inspect corresponding canonical results (`results/consolidated/`, `results/foolbox/`)
+### 15-minute scientific sanity check
+1. `CLAIM_MAP.md` — understand the claim structure
+2. `canonical/eval_mixed_norm.py` — inspect canonical enumerator
+3. `VERIFY.md` — run `make smoke` for end-to-end check
+4. `LIMITATIONS.md` — understand boundaries
 
-### Methodology review (~1 hour)
-1. Read `docs/threat_model.md`
-2. Read `docs/methodology.md`
-3. Read `docs/adr/ADR-001-canonical-exhaustive-mixed-norm-evaluation.md`
-4. Inspect exhaustive evaluator (`canonical/eval_deepfool_k1.py`)
-5. Inspect independent validation (`canonical/run_crown_vs_ibp.py` or `canonical/eval_jsma_vs_exhaustive.py`)
+### 30-minute methodology review
+1. `docs/threat_model.md` — mixed-norm threat model
+2. `docs/methodology.md` — evaluation conventions
+3. `docs/adr/ADR-001-canonical-exhaustive-mixed-norm-evaluation.md` — why exhaustive enumeration
+4. `canonical/eval_deepfool_k1.py` — canonical evaluator
+5. `canonical/run_crown_vs_ibp.py` or `canonical/eval_jsma_vs_exhaustive.py` — independent validation
 
-### Reproducibility review (~2 hours)
-1. Read `VERIFY.md`
-2. Run `make verify` to confirm checkpoint integrity
-3. Run `make smoke` for fast end-to-end verification
-4. Read `REPRODUCE.md`
-5. Run selected `reproduce-*` targets for time-budgeted experiments
-6. Compare fresh outputs against canonical archive using `verification/compare_exh_fresh.py`
+### 2-hour reproducibility review
+1. `VERIFY.md` — checkpoint verification, smoke tests
+2. `REPRODUCE.md` — full reproduction instructions
+3. Run selected `reproduce-*` targets for time-budgeted experiments
+4. `verification/compare_exh_fresh.py` — compare fresh vs canonical
+5. `EXPECTED_OUTPUTS.md` — verify outputs match expectations
 
-### Provenance review (~30 minutes)
-1. Read `PROVENANCE.md`
-2. Inspect `diagnostics/` for superseded implementations
-3. Read `docs/adr/` for decision rationale
+### 30-minute provenance review
+1. `PROVENANCE.md` — methodological evolution
+2. `docs/adr/` — decision rationale
+3. `diagnostics/` — superseded implementations
 4. Compare `canonical/eval_unified.py` (superseded) with `canonical/eval_deepfool_k1.py` (canonical)
 
 ## Dataset Caveats
