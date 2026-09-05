@@ -8,7 +8,7 @@ Produces a single consolidated table with BOTH conventions on the SAME checkpoin
 No re-runs needed — pure aggregation of existing results.
 
 Usage:
-  python scripts/consolidated_canonical_table.py
+  python canonical/consolidated_canonical_table.py
 """
 
 import json

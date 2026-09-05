@@ -12,10 +12,10 @@ Samples are batched (not processed one-at-a-time) for GPU efficiency.
 Wall-clock is measured per-batch; per-sample timing is derived.
 
 Usage:
-  python scripts/eval_scalability.py --dataset unsw_nb15 --method rsc --seed 42 \
+  python canonical/eval_scalability.py --dataset unsw_nb15 --method rsc --seed 42 \
       --K 1 --eligible-groups 0,1,2,3,4 --num-samples 500
 
-  python scripts/eval_scalability.py --dataset unsw_nb15 --method rsc --seed 42 \
+  python canonical/eval_scalability.py --dataset unsw_nb15 --method rsc --seed 42 \
       --K 2 --eligible-groups 0,1,2,3,4 --num-samples 500
 """
 

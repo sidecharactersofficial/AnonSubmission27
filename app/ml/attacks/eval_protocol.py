@@ -5,7 +5,7 @@ redefining them. This module exists because hardcoded eval defaults have twice
 been root causes: the alpha_cat training/eval drift, and a PGD mirror silently
 using the training-time steps=10 instead of the canonical eval-time 40.
 
-TRAINING-time PGD (steps=10) lives in scripts/train_unified.py — do not mix.
+TRAINING-time PGD (steps=10) lives in canonical/train_unified.py — do not mix.
 """
 
 EVAL_EPSILON = 0.15          # L-inf budget on continuous columns

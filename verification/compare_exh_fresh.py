@@ -12,7 +12,7 @@ Archived files embed checkpoint_sha256; it is compared exactly (this pins each
 sweep to the exact weights in models/).
 
 Usage:
-  python3 scripts/compare_exh_fresh.py --attack pgd40 [--dataset cicids2017]
+  python3 verification/compare_exh_fresh.py --attack pgd40 [--dataset cicids2017]
 """
 import argparse
 import glob

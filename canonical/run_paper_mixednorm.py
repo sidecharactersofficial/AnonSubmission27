@@ -3,7 +3,7 @@
 mixed-norm vulnerability table (legacy single-seed checkpoints).
 
 Re-runs the canonical exhaustive-state evaluator
-(scripts/eval_mixed_norm.py -> canonical_mixed_norm_attack) on the same legacy
+(canonical/eval_mixed_norm.py -> canonical_mixed_norm_attack) on the same legacy
 checkpoints and dataset loaders that produced the archived results/results_*.json,
 then (optionally) asserts freshly computed counts match the archived ones.
 
@@ -24,9 +24,9 @@ runs; use --dataset to extend the evaluation there (check output is then
 informational only).
 
 Usage:
-  python scripts/run_paper_mixednorm.py                  # NSL-KDD, all 4 models
-  python scripts/run_paper_mixednorm.py --check          # + compare to archived
-  python scripts/run_paper_mixednorm.py --dataset cicids2017
+  python canonical/run_paper_mixednorm.py                  # NSL-KDD, all 4 models
+  python canonical/run_paper_mixednorm.py --check          # + compare to archived
+  python canonical/run_paper_mixednorm.py --dataset cicids2017
 """
 
 import argparse

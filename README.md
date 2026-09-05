@@ -11,7 +11,9 @@ shipped checkpoints, scripts, and result files.
 ├── dataset_links.md             dataset acquisition + integrity anchors
 ├── download_data.py             NSL-KDD fetch + preprocessing (deterministic)
 ├── app/                          model architecture, loaders, attack implementations
-├── scripts/                      all evaluations. one script per table/claim
+├── canonical/                    final evaluators supporting reported conclusions
+├── diagnostics/                  historical implementations used to reproduce and diagnose retracted results
+├── verification/                 independent integrity and soundness checks
 ├── models/                       trained checkpoints (SHA-256 pinned in manifest/)
 ├── manifest/
 │   ├── checkpoint_sha256.json    SHA-256 of every model file
@@ -68,7 +70,7 @@ cited are from the reference machine: 6 GB mobile GPU, 10-core CPU, 11 GB RAM.
 
 **EXH K=1 sweeps.** `eval_deepfool_k1.py` performs an **unseeded** random-start
 PGD-40; each surviving-sample outcome can flip between runs. The comparator
-(`scripts/compare_exh_fresh.py`) pre-registers tolerances: `n_total`,
+(`verification/compare_exh_fresh.py`) pre-registers tolerances: `n_total`,
 `clean_correct`, `attacked`, and embedded `checkpoint_sha256` are exact;
 `k0/k1_survivors` within ±0.75% relative; `k1_pct_of_attacked` within ±0.5 pp.
 Observed drift in validation runs was ≪ 0.1 pp.
@@ -83,29 +85,29 @@ the originally-reported ~29.10% not reproduced (the Section III finding).
 
 | Target | Script | Paper content | Runtime (ref.) |
 |--------|--------|---------------|----------------|
-| `reproduce-table3` | `section3_faithful_diagnostic.py` | Table III prose: faithful AdvGuard reproduction (baseline 16.06%, hardened 40.36% @ 0.15) | ~45 s (CUDA) / ~4 min (CPU) |
-| `reproduce-table-mixednorm` | `run_paper_mixednorm.py` + `eval_mixed_norm.py` | mixed-norm K=0/1/2 collapse, NSL-KDD (Hardened 17421/0/0; Curriculum 5604/9/9; Baseline 3342/0/0; RSC 18106/0) | ~26 s |
-| `reproduce-multiseed-nslkdd` | `eval_deepfool_k1.py --attack pgd40` | multiseed EXH K=1, NSL-KDD, 9 models | ~10 min |
+| `reproduce-table3` | `canonical/section3_faithful_diagnostic.py` | Table III prose: faithful AdvGuard reproduction (baseline 16.06%, hardened 40.36% @ 0.15) | ~45 s (CUDA) / ~4 min (CPU) |
+| `reproduce-table-mixednorm` | `canonical/run_paper_mixednorm.py` + `canonical/eval_mixed_norm.py` | mixed-norm K=0/1/2 collapse, NSL-KDD (Hardened 17421/0/0; Curriculum 5604/9/9; Baseline 3342/0/0; RSC 18106/0) | ~26 s |
+| `reproduce-multiseed-nslkdd` | `canonical/eval_deepfool_k1.py --attack pgd40` | multiseed EXH K=1, NSL-KDD, 9 models | ~10 min |
 | `reproduce-multiseed-cicids` | same | multiseed EXH K=1, CICIDS2017, 39 models | ~6 h (parallelize) |
 | `reproduce-multiseed-unsw` | same | multiseed EXH K=1, UNSW-NB15, 27 models | ~9–10 h (parallelize) |
-| `reproduce-certified` | `run_crown_vs_ibp.py` (+ `crown_bound.py`, `certified_bound.py`) | Tables VIII–IX: CROWN vs IBP certified K=0/K=1 rates, 27 checkpoints | ~12–15 min |
-| `reproduce-scalability` | `eval_scalability.py` | Section VII-G: K=1 0.0155 s/state, K=2 0.118 s/state (reference GPU) | ~2 min (GPU) |
-| `reproduce-jsma` | `eval_jsma_vs_exhaustive.py` | Section VII-H: JSMA vs exhaustive-image, 500 UNSW samples | ~1 min |
-| `reproduce-logit-trace` | `trace_logit_reversal_hardened.py` | Table III prose: per-sample logit reversal for the hardened NSL model | ~4 s |
-| `reproduce-canonical-table` | `consolidated_canonical_table.py` | aggregated canonical summary, both K conventions | <1 s |
+| `reproduce-certified` | `canonical/run_crown_vs_ibp.py` (+ `canonical/crown_bound.py`, `canonical/certified_bound.py`) | Tables VIII–IX: CROWN vs IBP certified K=0/K=1 rates, 27 checkpoints | ~12–15 min |
+| `reproduce-scalability` | `canonical/eval_scalability.py` | Section VII-G: K=1 0.0155 s/state, K=2 0.118 s/state (reference GPU) | ~2 min (GPU) |
+| `reproduce-jsma` | `canonical/eval_jsma_vs_exhaustive.py` | Section VII-H: JSMA vs exhaustive-image, 500 UNSW samples | ~1 min |
+| `reproduce-logit-trace` | `canonical/trace_logit_reversal_hardened.py` | Table III prose: per-sample logit reversal for the hardened NSL model | ~4 s |
+| `reproduce-canonical-table` | `canonical/consolidated_canonical_table.py` | aggregated canonical summary, both K conventions | <1 s |
 
 ### Deepfool variant
-`eval_deepfool_k1.py --attack deepfool` reproduces the DeepFool EXH K=1
+`canonical/eval_deepfool_k1.py --attack deepfool` reproduces the DeepFool EXH K=1
 records (`results/foolbox/exh_k1_deepfool_*`; 47 files). Use
-`--suffix .fresh` and `scripts/compare_exh_fresh.py --attack deepfool` to
+`--suffix .fresh` and `verification/compare_exh_fresh.py --attack deepfool` to
 verify. Two CICIDS2017 seed-53 records (hardened, curriculum) are intentionally
 absent from the archive (evaluation budget); `--fresh` re-creates them.
 
 ### Superseded evaluator (archived for completeness)
-`eval_unified.py` was used for the Section VII-B masking-gap analysis
-(`results/unified/*`). It is superseded by `eval_deepfool_k1.py` +
-`consolidated_canonical_table.py`; kept for provenance. Usage:
-`python3 scripts/eval_unified.py --datasets cicids2017 --suffix .repro`.
+`canonical/eval_unified.py` was used for the Section VII-B masking-gap analysis
+(`results/unified/*`). It is superseded by `canonical/eval_deepfool_k1.py` +
+`canonical/consolidated_canonical_table.py`; kept for provenance. Usage:
+`python3 canonical/eval_unified.py --datasets cicids2017 --suffix .repro`.
 
 ## Re-generation vs. shipped results
 

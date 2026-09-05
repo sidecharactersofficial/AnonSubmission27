@@ -5,8 +5,8 @@ Recomputes the SHA-256 of every .pth under models/ and compares against the
 manifest. Prints each path with its hash; exits non-zero on any mismatch.
 
 Usage:
-  python scripts/verify_manifest.py          # verify + print all hashes
-  python scripts/verify_manifest.py --quiet  # verify only
+  python verification/verify_manifest.py          # verify + print all hashes
+  python verification/verify_manifest.py --quiet  # verify only
 """
 
 import argparse

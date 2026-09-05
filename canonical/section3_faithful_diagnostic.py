@@ -18,8 +18,8 @@ These bugs produced the 29.10% artifact. This script corrects both defaults
 while keeping the snap logic itself verbatim (argmax -> one_hot).
 
 Usage:
-    python scripts/section3_faithful_diagnostic.py
-    python scripts/section3_faithful_diagnostic.py --device cuda
+    python canonical/section3_faithful_diagnostic.py
+    python canonical/section3_faithful_diagnostic.py --device cuda
 """
 
 import argparse

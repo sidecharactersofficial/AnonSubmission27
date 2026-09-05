@@ -12,7 +12,7 @@ Then compares against the exhaustive K=1 evaluator:
 - Missed-flip rate: JSMA misses flips that exhaustive catches
 
 Usage:
-  python scripts/eval_jsma_vs_exhaustive.py --dataset unsw_nb15 --method rsc \
+  python canonical/eval_jsma_vs_exhaustive.py --dataset unsw_nb15 --method rsc \
       --seed 42 --K 1 --num-samples 500
 """
 
