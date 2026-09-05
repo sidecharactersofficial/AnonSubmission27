@@ -1,0 +1,31 @@
+{
+  "experiment_id": "E-C7-LOGIT-TRACE-01",
+  "claim": "C7",
+  "description": "Per-sample logit reversal trace for legacy hardened NSL-KDD model",
+  "dataset": {
+    "name": "NSL-KDD",
+    "sha256": "pinned in manifest/dataset_sha256.txt"
+  },
+  "checkpoint": {
+    "path": "models/model_adv_nsl_kdd.pth",
+    "sha256": "pinned in manifest/checkpoint_sha256.json"
+  },
+  "configuration": {
+    "epsilon": 0.15,
+    "pgd_steps": 40,
+    "alpha_cont": 0.01,
+    "categorical_budget": 1,
+    "num_samples": 3,
+    "selection": "high-margin clean-correct samples",
+    "random_start": false
+  },
+  "expected_output": "results/logit_trace_model_adv_hardened.json",
+  "expected_properties": {
+    "deterministic": true,
+    "byte_identical": true,
+    "clean_acc_gate": "≈ 80.57%"
+  },
+  "reproducibility_level": "R1",
+  "git_commit": "4bf8e56",
+  "script": "canonical/trace_logit_reversal_hardened.py"
+}

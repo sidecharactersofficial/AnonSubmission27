@@ -1,0 +1,30 @@
+{
+  "experiment_id": "E-C1-LEGACY-DIAGNOSTIC-01",
+  "claim": "C1",
+  "description": "Faithful reproduction of original AdvGuard one-shot evaluation protocol",
+  "dataset": {
+    "name": "NSL-KDD",
+    "sha256": "pinned in manifest/dataset_sha256.txt"
+  },
+  "checkpoint": {
+    "path": "models/model_adv_nsl_kdd.pth",
+    "sha256": "pinned in manifest/checkpoint_sha256.json"
+  },
+  "configuration": {
+    "epsilon": 0.15,
+    "pgd_steps": 40,
+    "alpha_cont": 0.01,
+    "alpha_cat": 1.0,
+    "device": "cuda or cpu",
+    "random_start": true
+  },
+  "expected_output": "results/section3/faithful_diagnostic_nsl_kdd.json",
+  "expected_properties": {
+    "baseline_robust_acc_eps015": "≈ 16.06%",
+    "hardened_robust_acc_eps015": "≈ 40.36%",
+    "run_to_run_spread": "±0.4 pp"
+  },
+  "reproducibility_level": "R3",
+  "git_commit": "4bf8e56",
+  "script": "canonical/section3_faithful_diagnostic.py"
+}

@@ -1,0 +1,38 @@
+{
+  "experiment_id": "E-C2-EXHAUSTIVE-MIXEDNORM-01",
+  "claim": "C2",
+  "description": "Mixed-norm K=0/1/2 collapse on NSL-KDD using canonical exhaustive enumerator",
+  "dataset": {
+    "name": "NSL-KDD",
+    "sha256": "pinned in manifest/dataset_sha256.txt"
+  },
+  "checkpoints": [
+    {"path": "models/model_nsl_kdd.pth", "method": "baseline"},
+    {"path": "models/model_adv_pgd_curriculum_nsl_kdd.pth", "method": "curriculum"},
+    {"path": "models/model_adv_nsl_kdd.pth", "method": "hardened"},
+    {"path": "models/model_adv_rsc_nsl_kdd.pth", "method": "rsc"}
+  ],
+  "configuration": {
+    "epsilon": 0.15,
+    "pgd_steps": 40,
+    "alpha_cont": 0.01,
+    "categorical_budget": [0, 1, 2],
+    "random_start": false
+  },
+  "expected_output": [
+    "results/results_nsl_kdd_Baseline.json",
+    "results/results_nsl_kdd_Curriculum.json",
+    "results/results_nsl_kdd_Hardened.json",
+    "results/results_nsl_kdd_RSC.json"
+  ],
+  "expected_properties": {
+    "baseline": "3342/0/0 (K=0/K=1/K=2 survivors)",
+    "curriculum": "5604/9/9",
+    "hardened": "17421/0/0",
+    "rsc": "18106/0",
+    "total_samples": 22543
+  },
+  "reproducibility_level": "R2",
+  "git_commit": "4bf8e56",
+  "script": "canonical/run_paper_mixednorm.py"
+}

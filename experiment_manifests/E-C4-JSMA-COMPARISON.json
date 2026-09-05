@@ -1,0 +1,30 @@
+{
+  "experiment_id": "E-C4-JSMA-COMPARISON-01",
+  "claim": "C4",
+  "description": "Group-level JSMA vs exhaustive K=1 PGD-40 comparison on UNSW-NB15",
+  "dataset": {
+    "name": "UNSW-NB15",
+    "sha256": "pinned in manifest/dataset_sha256.txt"
+  },
+  "checkpoint": {
+    "path": "models/unified/model_adv_rsc_unsw_nb15_seed42.pth",
+    "sha256": "pinned in manifest/checkpoint_sha256.json"
+  },
+  "configuration": {
+    "epsilon": 0.15,
+    "pgd_steps": 40,
+    "categorical_budget": 1,
+    "jsma_theta": 0.4,
+    "num_samples": 500,
+    "random_start": true
+  },
+  "expected_output": "results/jsma_vs_exhaustive_unsw_nb15_K1.json",
+  "expected_properties": {
+    "jsma_miss_rate": "≈ 12.0% of true adversarial examples",
+    "jsma_slowdown": "≈ 10x slower than PGD",
+    "agreement_with_exhaustive": "reported per sample"
+  },
+  "reproducibility_level": "R2",
+  "git_commit": "4bf8e56",
+  "script": "canonical/eval_jsma_vs_exhaustive.py"
+}

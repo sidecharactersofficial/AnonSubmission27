@@ -1,0 +1,47 @@
+{
+  "experiment_id": "E-C3-EXHAUSTIVE-K1-01",
+  "claim": "C3",
+  "description": "Multi-seed EXH K=1 exhaustive evaluation across 3 datasets",
+  "datasets": [
+    {
+      "name": "NSL-KDD",
+      "sha256": "pinned in manifest/dataset_sha256.txt",
+      "seeds": [42, 43, 44],
+      "methods": ["hardened", "curriculum", "rsc"],
+      "total_models": 9
+    },
+    {
+      "name": "CICIDS2017",
+      "sha256": "pinned in manifest/dataset_sha256.txt",
+      "seeds": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54],
+      "methods": ["hardened", "curriculum", "rsc"],
+      "total_models": 39
+    },
+    {
+      "name": "UNSW-NB15",
+      "sha256": "pinned in manifest/dataset_sha256.txt",
+      "seeds": [42, 43, 44, 46, 47, 48, 49, 50, 51],
+      "methods": ["hardened", "curriculum", "rsc"],
+      "total_models": 27
+    }
+  ],
+  "configuration": {
+    "epsilon": 0.15,
+    "pgd_steps": 40,
+    "alpha_cont": 0.01,
+    "categorical_budget": 1,
+    "random_start": true
+  },
+  "expected_output": "results/foolbox/exh_k1_*.json",
+  "expected_properties": {
+    "n_total": "exact match per dataset (22543 / 623869 / 508010)",
+    "clean_correct": "exact match",
+    "checkpoint_sha256": "exact match",
+    "k0_survivors": "within ±0.75% relative",
+    "k1_survivors": "within ±0.75% relative",
+    "k1_pct_of_attacked": "within ±0.5 pp absolute"
+  },
+  "reproducibility_level": "R3",
+  "git_commit": "4bf8e56",
+  "script": "canonical/eval_deepfool_k1.py"
+}

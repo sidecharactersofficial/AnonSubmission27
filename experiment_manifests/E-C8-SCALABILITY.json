@@ -1,0 +1,32 @@
+{
+  "experiment_id": "E-C8-SCALABILITY-01",
+  "claim": "C8",
+  "description": "Wall-clock timing for exhaustive K=1 and K=2 on UNSW-NB15",
+  "dataset": {
+    "name": "UNSW-NB15",
+    "sha256": "pinned in manifest/dataset_sha256.txt"
+  },
+  "checkpoint": {
+    "path": "models/unified/model_adv_rsc_unsw_nb15_seed42.pth",
+    "sha256": "pinned in manifest/checkpoint_sha256.json"
+  },
+  "configuration": {
+    "K": [1, 2],
+    "eligible_groups": [0, 1, 2, 3, 4],
+    "num_samples": 500,
+    "device": "cuda preferred"
+  },
+  "expected_output": [
+    "results/scalability_unsw_nb15_K1_g0_1_2_3_4.json",
+    "results/scalability_unsw_nb15_K2_g0_1_2_3_4.json"
+  ],
+  "expected_properties": {
+    "K1_states": 42,
+    "K2_states": 667,
+    "K1_time_per_state": "≈ 0.0155 s (reference GPU)",
+    "K2_time_per_state": "≈ 0.118 s (reference GPU)"
+  },
+  "reproducibility_level": "R2",
+  "git_commit": "4bf8e56",
+  "script": "canonical/eval_scalability.py"
+}

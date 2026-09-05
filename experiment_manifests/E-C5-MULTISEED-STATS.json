@@ -1,0 +1,27 @@
+{
+  "experiment_id": "E-C5-MULTISEED-STATS-01",
+  "claim": "C5",
+  "description": "Multi-seed statistical aggregation of EXH K=1 results across all datasets and methods",
+  "datasets": [
+    "nsl-kdd",
+    "cicids2017",
+    "unsw_nb15"
+  ],
+  "methods": [
+    "hardened",
+    "curriculum",
+    "rsc"
+  ],
+  "configuration": {
+    "aggregation": "mean ± std across seeds",
+    "conventions": ["alpha_cat=0.0 (EXH)", "alpha_cat=1.0 (SNAP)"]
+  },
+  "expected_output": "results/consolidated/canonical_both_conventions.json",
+  "expected_properties": {
+    "format": "per-seed and mean±std tables",
+    "coverage": "all 3 datasets × 3 methods × canonical seeds"
+  },
+  "reproducibility_level": "R4",
+  "git_commit": "4bf8e56",
+  "script": "canonical/consolidated_canonical_table.py"
+}

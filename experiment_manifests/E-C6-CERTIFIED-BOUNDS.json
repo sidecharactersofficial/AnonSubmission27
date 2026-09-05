@@ -1,0 +1,39 @@
+{
+  "experiment_id": "E-C6-CERTIFIED-BOUNDS-01",
+  "claim": "C6",
+  "description": "CROWN vs IBP certified bounds for K=0 and K=1 across 27 checkpoints",
+  "datasets": [
+    "nsl-kdd",
+    "cicids2017",
+    "unsw_nb15"
+  ],
+  "methods": [
+    "hardened",
+    "curriculum",
+    "rsc"
+  ],
+  "seeds": {
+    "nsl-kdd": [42, 43, 44],
+    "cicids2017": [42, 43, 44],
+    "unsw_nb15": [42, 43, 44]
+  },
+  "configuration": {
+    "crown_k0": "backward margin lower bound, K=0",
+    "crown_k1": "backward margin lower bound, K=1",
+    "ibp_k0": "forward interval bound, K=0",
+    "ibp_k1": "forward interval bound, K=1",
+    "soundness_check": "crown_k1 <= ibp_k1 + 1e-6"
+  },
+  "expected_output": [
+    "results/certificates/crown_vs_ibp_*.json",
+    "results/certificates/cert_ibp_*.json"
+  ],
+  "expected_properties": {
+    "deterministic": true,
+    "byte_identical": true,
+    "total_files": 27
+  },
+  "reproducibility_level": "R1",
+  "git_commit": "4bf8e56",
+  "script": "canonical/run_crown_vs_ibp.py"
+}

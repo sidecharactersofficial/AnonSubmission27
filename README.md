@@ -3,28 +3,77 @@
 Everything needed to reproduce every table and figure of the paper from the
 shipped checkpoints, scripts, and result files.
 
+## Artifact Navigation
+
+```
+                    ARTIFACT NAVIGATION
+                          │
+          ┌───────────────┼────────────────┐
+          │               │                │
+       CLAIMS          EVALUATION       PROVENANCE
+          │               │                │
+     CLAIM_MAP.md     one-shot         ADRs
+          │           exhaustive       postmortems
+          │           C&W              superseded
+          │           certificates
+          │
+     Paper Sections
+          │
+      Evidence
+```
+
+| If you are reviewing... | Start here |
+|---|---|
+| Mixed-norm threat model | `docs/threat_model.md` |
+| Canonical evaluation pipeline | `canonical/eval_deepfool_k1.py` |
+| Mixed-norm enumeration | `canonical/eval_mixed_norm.py` |
+| Certified robustness bounds | `canonical/run_crown_vs_ibp.py` |
+| Independent attack validation | `canonical/eval_jsma_vs_exhaustive.py` |
+| Reproduce paper tables | `canonical/consolidated_canonical_table.py` |
+| Historical methodology changes | `PROVENANCE.md` |
+| Known limitations | `LIMITATIONS.md` |
+| Claim-to-evidence mapping | `CLAIM_MAP.md` |
+| Fast verification | `VERIFY.md` |
+| Full reproduction | `REPRODUCE.md` |
+
 ```
 .
-├── Makefile                     reproducible proof pipeline (see below)
-├── LICENSE                      MIT
-├── requirements.txt             pinned environment
-├── dataset_links.md             dataset acquisition + integrity anchors
-├── download_data.py             NSL-KDD fetch + preprocessing (deterministic)
-├── app/                          model architecture, loaders, attack implementations
-├── canonical/                    final evaluators supporting reported conclusions
-├── diagnostics/                  historical implementations used to reproduce and diagnose retracted results
-├── verification/                 independent integrity and soundness checks
-├── models/                       trained checkpoints (SHA-256 pinned in manifest/)
-├── manifest/
-│   ├── checkpoint_sha256.json    SHA-256 of every model file
-│   └── dataset_sha256.txt        SHA-256 of preprocessed tensors (not shipped)
-└── results/
-    ├── foolbox/                  multi-seed EXH K=1 sweeps (pgd40 + deepfool)
-    ├── certificates/             CROWN vs IBP certified rates
-    ├── consolidated/             aggregated canonical tables
-    ├── section3/                 faithful AdvGuard diagnostic
-    ├── cw/                       C&W survivor records
-    └── *.json                    mixed-norm K=0/1/2, scalability, JSMA, trace, unified
+├── README.md                     Overview and quick start
+├── REVIEWER_GUIDE.md             Entry point for reviewers
+├── CLAIM_MAP.md                  Scientific claim → evidence navigation
+├── VERIFY.md                     Fast verification without full reproduction
+├── REPRODUCE.md                  Full reproduction instructions
+├── LIMITATIONS.md                Explicit boundaries of the artifact
+├── PROVENANCE.md                 Methodological history and superseded code
+├── REPRODUCIBILITY_LEVELS.md     Classification of reproduction guarantees
+├── EXPECTED_OUTPUTS.md           What to expect when running each experiment
+├── CITATION_TO_ARTIFACT.md       Versioning and citation information
+├── Makefile                      Reproducibility pipeline
+├── requirements.txt              Pinned Python environment
+├── download_data.py              NSL-KDD dataset download and preprocessing
+├── dataset_links.md              Dataset acquisition and integrity anchors
+├── app/                          Shared library: models, attacks, loaders, training
+├── canonical/                    Final evaluators supporting reported conclusions
+├── diagnostics/                  Historical implementations for provenance
+├── verification/                 Integrity checks and fresh-vs-archive comparison
+├── models/                       Trained checkpoints (SHA-256 pinned)
+├── manifest/                     SHA-256 manifests for datasets and checkpoints
+├── experiment_manifests/         Machine-readable experiment manifests (C1-C8)
+├── results/                      Archived experimental outputs
+│   ├── foolbox/                  Multi-seed EXH K=1 sweeps
+│   ├── certificates/             CROWN vs IBP certified rates
+│   ├── consolidated/             Aggregated canonical tables
+│   ├── section3/                 Faithful AdvGuard diagnostic
+│   ├── cw/                       C&W survivor records
+│   └── unified/                  Superseded masking-gap analysis
+└── docs/
+    ├── threat_model.md           Mixed-norm threat model specification
+    ├── methodology.md            Evaluation methodology and conventions
+    └── adr/                      Architectural Decision Records
+        ├── ADR-001-canonical-exhaustive-mixed-norm-evaluation.md
+        ├── ADR-002-statistical-re-evaluation.md
+        ├── ADR-003-independent-attack-validation.md
+        └── ADR-004-canonical-vs-fresh-reproduction.md
 ```
 
 ## Quick start
@@ -141,6 +190,22 @@ byte-identical for `reproduce-certified`, `reproduce-logit-trace`,
   (seeds 42–44) + UNSW-NB15 (seeds 42–44) = 27 files; `cert_ibp_*_seed53.json`
   are auxiliary IBP-only records. The 31-file set is complete for Tables
   VIII–IX.
+
+## Reviewer Documentation
+
+This artifact includes a complete reviewer documentation suite. Start with
+`REVIEWER_GUIDE.md` for navigation guidance. Key documents:
+
+- `CLAIM_MAP.md` — Every paper claim mapped to exact code, output, and evidence
+- `PROVENANCE.md` — Methodological evolution and superseded implementations
+- `LIMITATIONS.md` — Explicit boundaries and dataset caveats
+- `VERIFY.md` — Fast verification without full reproduction
+- `REPRODUCE.md` — Full reproduction instructions
+- `REPRODUCIBILITY_LEVELS.md` — Classification of reproduction guarantees
+- `EXPECTED_OUTPUTS.md` — What to expect when running each experiment
+- `CITATION_TO_ARTIFACT.md` — Versioning and citation information
+- `docs/adr/` — Architectural Decision Records explaining key design choices
+- `experiment_manifests/` — Machine-readable experiment manifests (C1–C8)
 
 ## Files omitted from the artifact
 
