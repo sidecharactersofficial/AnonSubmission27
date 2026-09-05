@@ -174,9 +174,13 @@ byte-identical for `reproduce-certified`, `reproduce-logit-trace`,
 
 ## Known gaps / honest limitations
 
-- **CICIDS2017 / UNSW-NB15 preprocessing is not scripted.** Parquet
-  representations are not regenerable from the shipped scripts; `dataset_links.md`
-  documents the pipeline and pins the exact tensors via SHA-256.
+- **CICIDS2017 / UNSW-NB15 from-scratch regeneration is scripted but not
+  guaranteed byte-identical.** `data_scripts/download_cicids2017.py` and
+  `data_scripts/download_unsw_nb15.py` implement the canonical preprocessing
+  pipelines. However, public mirrors may change and category frequencies may
+  differ slightly, so output hashes may not match the shipped manifests.
+  The shipped `data/*.parquet` files are the authoritative source for exact
+  reproduction.
 - **One legacy NSL/UNSW mixed-norm file is stale.** Of the legacy per-dataset
   K=0/1 files produced by the pre-foolbox mixed-norm evaluator, all are full
   test-set runs except `results/results_unsw_nb15_Hardened.json`, which was a

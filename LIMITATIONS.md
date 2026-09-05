@@ -9,16 +9,19 @@ results.
 **Status**: Known limitation.
 
 **Description**: Processed tensor representations for CICIDS2017 and
-UNSW-NB15 cannot currently be fully regenerated from raw public sources using
-the shipped pipeline. The `data_scripts/download_data.py` script only handles NSL-KDD.
+UNSW-NB15 can be regenerated from raw public sources using the shipped
+`data_scripts/download_cicids2017.py` and `data_scripts/download_unsw_nb15.py`
+scripts. However, the output hashes may differ from the shipped manifests if
+public mirrors change or category frequencies differ. The shipped parquet files
+remain the authoritative source for exact reproduction.
 
 **Impact**:
 - Does not affect verification of shipped experiments using pinned checkpoints
   and manifests.
-- Limits end-to-end reconstruction from raw source data without manual
-  preprocessing steps.
-- Reviewers who need to modify datasets or retrain models should consult
-  `dataset_links.md` for the original preprocessing pipeline.
+- From-scratch regeneration produces structurally compatible data (same feature
+  layout and dimensions) but may not be byte-identical to shipped archives.
+- Reviewers who need exact numerical reproduction should use the shipped
+  preprocessed tensors.
 
 **Mitigation**: SHA-256 hashes in `manifest/dataset_sha256.txt` pin the exact
 tensors consumed by all canonical evaluations.

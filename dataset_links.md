@@ -65,8 +65,26 @@ train only. 70/30 train-test split. Output: `data/cicids2017_train.parquet`,
 
 Downloads `UNSW_NB15_4.csv` and feature definitions, drops row-identity columns
 (`srcip/dstip/srcport/dstport`) and `attack_cat`, re-codes `label` to binary,
-one-hot encodes categoricals, standardizes on train only. 70/30 train-test split.
+then constructs the canonical 79-dimensional feature layout defined in
+`app/ml/data/unsw_nb15_config.py`:
+
+- 38 continuous features (indices 0–37)
+- 11 proto one-hot features (indices 38–48), top-10 + OTHER
+- 11 state one-hot features (indices 49–59), top-10 + OTHER
+- 13 service one-hot features (indices 60–72), top-12 + OTHER
+- 2 is_sm_ips_ports one-hot features (indices 73–74)
+- 4 is_ftp_login one-hot features (indices 75–78)
+
+High-cardinality categorical columns are capped at top-k frequencies in the
+training set to ensure deterministic dimensions. Continuous features are
+standardized on train statistics only. 70/30 train-test split.
+
 Output: `data/unsw_nb15_train.parquet`, `data/unsw_nb15_test.parquet`.
+
+> **Note:** The shipped `data/unsw_nb15_*.parquet` files are the authoritative
+> source for exact reproduction. This script provides a best-effort from-scratch
+> regeneration path; output hashes will likely differ from the shipped manifest.
+> For exact reproduction, use the shipped parquet files.
 
 ## Manual download fallback
 

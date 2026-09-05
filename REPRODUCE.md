@@ -23,16 +23,17 @@ This fetches raw NSL-KDD CSVs from the public repository, applies
 preprocessing, and writes `data/nsl-kdd-train.csv` and `data/nsl-kdd-test.csv`.
 SHA-256 hashes are pinned in `manifest/dataset_sha256.txt`.
 
-### CICIDS2017 and UNSW-NB15 (Not Regenerable)
+### CICIDS2017 and UNSW-NB15
 
-These datasets require manual acquisition and preprocessing. The pipeline is
-documented in `dataset_links.md`. Processed tensor SHAs are pinned in
-`manifest/dataset_sha256.txt`.
+```bash
+python3 data_scripts/download_cicids2017.py
+python3 data_scripts/download_unsw_nb15.py
+```
 
-**Why not scripted**: The preprocessing steps for these datasets involve
-proprietary or manual transformations that cannot be fully automated from
-publicly available raw data. The artifact ships the exact preprocessed
-tensors consumed by all canonical evaluations.
+These scripts download the raw data and apply the canonical preprocessing
+pipeline. The shipped, hash-verified parquet files are the authoritative source
+for exact reproduction; from-scratch regeneration may produce slightly different
+hashes due to public mirror variations or category frequency differences.
 
 ## Model Training
 

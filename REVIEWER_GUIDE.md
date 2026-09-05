@@ -97,11 +97,9 @@ to inspect the repository linearly.
 ## Dataset Caveats
 
 - **NSL-KDD** can be regenerated from public sources using `data_scripts/download_data.py`.
-- **CICIDS2017** and **UNSW-NB15** preprocessing is not scripted. The raw
-  data acquisition pipeline is documented in `dataset_links.md`. Processed
-  tensor SHAs are pinned in `manifest/dataset_sha256.txt`. The script does
-  not include dataset-specific preprocessing for these two datasets because
-  the preprocessing steps involve proprietary or manual transformations that
-  cannot be fully automated from publicly available raw data.
+- **CICIDS2017** and **UNSW-NB15** can be regenerated from public sources using
+  `data_scripts/download_cicids2017.py` and `data_scripts/download_unsw_nb15.py`.
+  The shipped, hash-verified parquet files are the authoritative source for exact
+  reproduction.
 - Reviewers with limited time can verify all claims using the shipped
   preprocessed tensors and checkpoints without re-running data pipelines.
