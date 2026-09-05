@@ -10,7 +10,7 @@ results.
 
 **Description**: Processed tensor representations for CICIDS2017 and
 UNSW-NB15 cannot currently be fully regenerated from raw public sources using
-the shipped pipeline. The `download_data.py` script only handles NSL-KDD.
+the shipped pipeline. The `data_scripts/download_data.py` script only handles NSL-KDD.
 
 **Impact**:
 - Does not affect verification of shipped experiments using pinned checkpoints

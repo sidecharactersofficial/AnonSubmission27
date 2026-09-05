@@ -46,7 +46,9 @@ help:
 setup:
 	python3 -m venv .venv
 	.venv/bin/pip install -r requirements.txt
-	$(PY) download_data.py        # fetches + preprocesses NSL-KDD (~120 MB download)
+	$(PY) data_scripts/download_data.py        # fetches + preprocesses NSL-KDD (~120 MB download)
+	$(PY) data_scripts/download_cicids2017.py  # fetches + preprocesses CICIDS2017
+	$(PY) data_scripts/download_unsw_nb15.py   # fetches + preprocesses UNSW-NB15
 
 verify:
 	$(PY) verification/verify_manifest.py

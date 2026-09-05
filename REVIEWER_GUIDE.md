@@ -37,7 +37,10 @@ to inspect the repository linearly.
 ├── CITATION_TO_ARTIFACT.md       Versioning and citation information
 ├── Makefile                      Reproducibility pipeline
 ├── requirements.txt              Pinned Python environment
-├── download_data.py              NSL-KDD dataset download and preprocessing
+├── data_scripts/                  Dataset download and preprocessing scripts
+│   ├── download_data.py           NSL-KDD
+│   ├── download_cicids2017.py     CICIDS2017
+│   └── download_unsw_nb15.py      UNSW-NB15
 ├── dataset_links.md              Dataset acquisition and integrity anchors
 ├── app/                          Shared library: models, attacks, loaders, training
 ├── canonical/                    Final evaluators supporting reported conclusions
@@ -93,7 +96,7 @@ to inspect the repository linearly.
 
 ## Dataset Caveats
 
-- **NSL-KDD** can be regenerated from public sources using `download_data.py`.
+- **NSL-KDD** can be regenerated from public sources using `data_scripts/download_data.py`.
 - **CICIDS2017** and **UNSW-NB15** preprocessing is not scripted. The raw
   data acquisition pipeline is documented in `dataset_links.md`. Processed
   tensor SHAs are pinned in `manifest/dataset_sha256.txt`. The script does

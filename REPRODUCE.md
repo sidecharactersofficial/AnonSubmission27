@@ -16,7 +16,7 @@ pip install -r requirements.txt
 ### NSL-KDD (Regenerable)
 
 ```bash
-python3 download_data.py
+python3 data_scripts/download_data.py
 ```
 
 This fetches raw NSL-KDD CSVs from the public repository, applies

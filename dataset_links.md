@@ -1,14 +1,16 @@
-# Datasets
+# Dataset Links
 
-The repository does **not** bundle the raw datasets. Three options exist:
+All dataset download and preprocessing logic lives in `data_scripts/`.
 
-1. **NSL-KDD** — regenerated automatically by the in-repo `download_data.py`
-   (pull from the public `defcom17/NSL_KDD` mirror, preprocess deterministically
-   to `data/nsl-kdd-train.csv` / `data/nsl-kdd-test.csv`).
-2. **CICIDS2017 / UNSW-NB15** — preprocessed to Parquet **offline** (not
-   reproducible by in-repo scripts). Download the raw originals and reproduce
-   the preprocessing steps documented below, or use the integrity anchors to
-   verify already-preprocessed copies.
+## Quick start
+
+```bash
+python3 data_scripts/download_data.py           # NSL-KDD
+python3 data_scripts/download_cicids2017.py     # CICIDS2017
+python3 data_scripts/download_unsw_nb15.py      # UNSW-NB15
+```
+
+Each script writes preprocessed files to `./data/` and prints SHA-256 hashes.
 
 ## Integrity anchors (SHA-256)
 
@@ -37,35 +39,42 @@ training scripts. If your preprocessed files match, your numbers will match.
 > `total = 348,000`; it is not a source of any paper table and is superseded by
 > the full-test-set foolbox sweeps and by `results_unsw_nb15_Hardened_fgsm.json`.)
 
-## CICIDS2017 / UNSW-NB15 preprocessing (documented, not scripted)
+## Dataset sources and preprocessing
 
-- **CICIDS2017.** Use the `Intrusion_Detection_Evaluation_Dataset` (CICIDS2017),
-  `pcap`-derived CSV. Steps: select the final two days
-  (`Wednesday-WorkingHours.pcap_ISCX.csv`, `Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv`,
-  `Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv`,
-  `Friday-WorkingHours-Morning.pcap_ISCX.csv`,
-  `Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv`,
-  `Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv`), drop the duplicate
-  `Label` + the `Fwd Header Length` duplicate, re-code the multi-class labels to
-  binary (any attack → `1`), drop the all-zero `Fwd Packet Length Max` column,
-  and leak-safe one-hot + standardize (fit on train only). Final 81-column
-  schema (`label` last).
-- **UNSW-NB15.** Use `UNSW_NB15_4.csv` augmented with the five
-  `*_labels.parquet`/feature files for the `attack_cat` split, drop
-  `attack_cat`, re-code `label` to binary, drop the `srcip/dstip/srcport/dstport`
-  row-identity columns, then the same one-hot + standardize pipeline. Final
-  80-column schema (`label` last).
+### NSL-KDD
 
-Leak-safe preprocessing (fit standardization on **train** only) is essential to
-reproduce reported numbers; the exact train-holdout split is `train: 70%`,
-`test: 30%`.
+**Script:** `data_scripts/download_data.py`
 
-## NSL-KDD
+Downloads raw CSVs from `defcom17/NSL_KDD`, keeps 4 continuous + 2 categorical
+groups + `label`, one-hots categoricals, min-max scales continuous columns on
+train statistics only. Output: `data/nsl-kdd-train.csv`, `data/nsl-kdd-test.csv`.
 
-```
-python3 download_data.py          # writes data/nsl-kdd-train.csv + nsl-kdd-test.csv
-```
+### CICIDS2017
 
-Downloads the raw ARFF/TXT from the public mirror `defcom17/NSL_KDD` on GitHub,
-keeps the 22 continuous + 3 categorical + `label` fields, one-hots the
-categoricals, and standardizes continuous columns on train statistics only.
+**Script:** `data_scripts/download_cicids2017.py`
+
+Downloads six selected day CSVs from public mirrors, drops duplicate `Label` +
+`Fwd Header Length` columns, drops all-zero `Fwd Packet Length Max`, re-codes
+multi-class labels to binary, one-hot encodes categoricals, standardizes on
+train only. 70/30 train-test split. Output: `data/cicids2017_train.parquet`,
+`data/cicids2017_test.parquet`.
+
+### UNSW-NB15
+
+**Script:** `data_scripts/download_unsw_nb15.py`
+
+Downloads `UNSW_NB15_4.csv` and feature definitions, drops row-identity columns
+(`srcip/dstip/srcport/dstport`) and `attack_cat`, re-codes `label` to binary,
+one-hot encodes categoricals, standardizes on train only. 70/30 train-test split.
+Output: `data/unsw_nb15_train.parquet`, `data/unsw_nb15_test.parquet`.
+
+## Manual download fallback
+
+If automatic download URLs are unavailable (GitHub mirrors are occasionally
+taken down), manually download the raw datasets and place them in `./data/`:
+
+- **CICIDS2017**: `https://www.unb.ca/cic/datasets/ids-2017.html`
+- **UNSW-NB15**: `https://www.unsw.adfa.edu.au/unsw-canberra-cyber/cybersecurity/research/unsw-nb15-dataset/`
+
+Then re-run the corresponding script; it will detect existing files and skip
+download.

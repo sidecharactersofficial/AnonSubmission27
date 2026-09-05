@@ -22,7 +22,7 @@ Individual components may be cited separately:
 - **Exhaustive mixed-norm evaluator**: `canonical/eval_deepfool_k1.py`
 - **Mixed-norm enumeration**: `canonical/eval_mixed_norm.py`
 - **Certified bounds**: `canonical/crown_bound.py`, `canonical/certified_bound.py`
-- **Dataset processing**: `download_data.py`, `dataset_links.md`
+- **Dataset processing**: `data_scripts/download_data.py`, `data_scripts/download_cicids2017.py`, `data_scripts/download_unsw_nb15.py`, `dataset_links.md`
 
 ## Versioning Policy
 

@@ -50,7 +50,10 @@ shipped checkpoints, scripts, and result files.
 ├── CITATION_TO_ARTIFACT.md       Versioning and citation information
 ├── Makefile                      Reproducibility pipeline
 ├── requirements.txt              Pinned Python environment
-├── download_data.py              NSL-KDD dataset download and preprocessing
+├── data_scripts/                  Dataset download and preprocessing scripts
+│   ├── download_data.py           NSL-KDD
+│   ├── download_cicids2017.py     CICIDS2017
+│   └── download_unsw_nb15.py      UNSW-NB15
 ├── dataset_links.md              Dataset acquisition and integrity anchors
 ├── app/                          Shared library: models, attacks, loaders, training
 ├── canonical/                    Final evaluators supporting reported conclusions
@@ -81,7 +84,7 @@ shipped checkpoints, scripts, and result files.
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 . .venv/bin/activate
-make setup          # fetches NSL-KDD; CICIDS2017/UNSW-NB15 per dataset_links.md
+make setup          # fetches all datasets (NSL-KDD, CICIDS2017, UNSW-NB15)
 make verify         # confirm every checkpoint matches its pinned SHA-256
 make smoke          # fast end-to-end check (~2 min)
 make reproduce-table3
