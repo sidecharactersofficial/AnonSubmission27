@@ -34,7 +34,7 @@ to a claim or reproducibility requirement.
 ## Claim C5 — Statistical validation
 - [ ] `canonical/consolidated_canonical_table.py` runs successfully
 - [ ] Aggregated mean±std tables are produced
-- [ ] Multi-seed coverage matches manifest (NSL-KDD: 3 seeds, CICIDS2017: 13 seeds, UNSW-NB15: 10 seeds)
+- [ ] Multi-seed coverage matches manifest (NSL-KDD: 3 seeds, CICIDS2017: 13 seeds, UNSW-NB15: 9 seeds)
 
 ## Claim C6 — Independent attack validation
 - [ ] `canonical/run_crown_vs_ibp.py` executes without soundness assertion failures
