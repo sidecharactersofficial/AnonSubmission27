@@ -16,6 +16,7 @@ to inspect the repository linearly.
 | Independent attack validation | `canonical/eval_jsma_vs_exhaustive.py` |
 | Reproduce paper tables | `canonical/consolidated_canonical_table.py` |
 | Historical methodology changes | `PROVENANCE.md` |
+| Evaluation diagnostics & audits | `docs/postmortem/` |
 | Known limitations | `LIMITATIONS.md` |
 | Claim-to-evidence mapping | `CLAIM_MAP.md` |
 | Review verification checklist | `REVIEW_CHECKLIST.md` |

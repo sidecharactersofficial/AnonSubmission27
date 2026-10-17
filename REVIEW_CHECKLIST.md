@@ -58,6 +58,20 @@ to a claim or reproducibility requirement.
 - [ ] `docs/adr/` contains ADR-001 through ADR-004
 - [ ] Canonical vs superseded evaluators are clearly distinguished
 
+## Evaluation Diagnostics (docs/postmortem)
+- [ ] `docs/postmortem/001` diagnostic summary reviewed
+- [ ] Evaluator-correctness diagnostic (002) confirms exhaustive enumeration
+      and K=0/K=1 AND-semantics
+- [ ] Reconciliation (003) explains the 11.69% ± 24.9% vs ~40% K=1 gap on
+      CICIDS2017 RSC (seed variance + population semantics, not evaluator bugs)
+- [ ] Threat-model clarification (004) matches the CICIDS2017 categorical
+      mapping described in `docs/threat_model.md`
+- [ ] Coverage audits (005) and representation-sensitivity finding (006,
+      also in `LIMITATIONS.md`) acknowledged
+- [ ] EXH vs SNAP canonical comparison (007): 66/75 positive K=1 gaps,
+      K=0 exact match under controlled init; K-budget staging on UNSW-NB15
+      notes K=1 threat-model incompleteness
+
 ## Limitations
 - [ ] Dataset reconstruction limitation understood (CICIDS2017/UNSW-NB15)
 - [ ] Continuous optimization limitation understood (no global certificate)

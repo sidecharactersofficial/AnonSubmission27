@@ -81,7 +81,9 @@ shipped checkpoints, scripts, and result files.
     │   ├── 003-reconciliation-diagnostic-vs-archived-results.md
     │   ├── 004-threat-model-clarification-cicids2017.md
     │   ├── 005-audits-1-3-feature-category-semantic-coverage.md
-    │   └── 006-audit-4-representation-sensitivity.md
+    │   ├── 006-audit-4-representation-sensitivity.md
+    │   ├── 007-exh-vs-snap-canonical-comparison.md
+    │   └── README.md
     └── adr/                      Architectural Decision Records
         ├── ADR-001-canonical-exhaustive-mixed-norm-evaluation.md
         ├── ADR-002-statistical-re-evaluation.md

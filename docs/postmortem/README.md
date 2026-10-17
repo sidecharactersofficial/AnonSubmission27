@@ -16,6 +16,7 @@ the coverage and representation-sensitivity audits.
 | 004 | `004-threat-model-clarification-cicids2017.md` | CICIDS2017 categorical group mapping and K=1 implications |
 | 005 | `005-audits-1-3-feature-category-semantic-coverage.md` | Audits of feature coverage, category coverage, and semantic validity |
 | 006 | `006-audit-4-representation-sensitivity.md` | Representation-sensitivity audit (known limitation, see `LIMITATIONS.md`) |
+| 007 | `007-exh-vs-snap-canonical-comparison.md` | EXH vs SNAP canonical comparison across 75 checkpoints, plus staged K-budget evaluation on UNSW-NB15 |
 
 ## Note on paths
 
@@ -39,3 +40,8 @@ etc.). Reported checkpoint SHAs are the same pins used by
   model-dependent, not an artifact of attack budget settings.
 - **Coverage audits pass** (features, categories, semantic validity); the
   representation-sensitivity audit is a documented open limitation.
+- **EXH vs SNAP gap quantified**: 66/75 checkpoints show SNAP overestimating
+  K=1 robustness (mean 41.9pp among non-zero gaps; zero gap only on NSL-KDD
+  where both agree at 0%); K=0 matches exactly under controlled init.
+  Staged K=2 evaluation shows UNSW-NB15's residual robustness is largely a
+  K=1 threat-model incompleteness artifact.
