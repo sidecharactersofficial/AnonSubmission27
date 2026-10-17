@@ -32,6 +32,7 @@ shipped checkpoints, scripts, and result files.
 | Review verification checklist | `REVIEW_CHECKLIST.md` |
 | Reproduce paper tables | `canonical/consolidated_canonical_table.py` |
 | Historical methodology changes | `PROVENANCE.md` |
+| Evaluation diagnostics & audits | `docs/postmortem/` |
 | Known limitations | `LIMITATIONS.md` |
 | Claim-to-evidence mapping | `CLAIM_MAP.md` |
 | Fast verification | `VERIFY.md` |
@@ -74,6 +75,13 @@ shipped checkpoints, scripts, and result files.
 └── docs/
     ├── threat_model.md           Mixed-norm threat model specification
     ├── methodology.md            Evaluation methodology and conventions
+    ├── postmortem/               Post-evaluation diagnostics and audits
+    │   ├── 001-final-diagnostic-summary.md
+    │   ├── 002-evaluator-correctness-and-attack-budget-diagnostic.md
+    │   ├── 003-reconciliation-diagnostic-vs-archived-results.md
+    │   ├── 004-threat-model-clarification-cicids2017.md
+    │   ├── 005-audits-1-3-feature-category-semantic-coverage.md
+    │   └── 006-audit-4-representation-sensitivity.md
     └── adr/                      Architectural Decision Records
         ├── ADR-001-canonical-exhaustive-mixed-norm-evaluation.md
         ├── ADR-002-statistical-re-evaluation.md

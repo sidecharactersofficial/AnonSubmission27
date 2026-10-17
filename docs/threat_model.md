@@ -57,5 +57,11 @@ and categorical features:
 - **CICIDS2017** — 623,869 test samples, 80 features (77 continuous, 1 categorical group)
 - **UNSW-NB15** — 508,010 test samples, 79 features (38 continuous, 5 categorical groups)
 
+For CICIDS2017, the single categorical group maps to the one-hot encoded
+protocol field over columns 77-79 (three encoded protocol states; one is
+extremely rare). The categorical attack surface therefore differs by dataset
+by design; see `docs/postmortem/004-threat-model-clarification-cicids2017.md`
+for the exact column mapping and observed state distribution.
+
 Preprocessed tensor SHAs are pinned in `manifest/dataset_sha256.txt`.
 Raw dataset acquisition is documented in `dataset_links.md`.

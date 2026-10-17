@@ -97,6 +97,29 @@ reviewers who inspect training scripts.
 **Mitigation**: `PROVENANCE.md` documents the origin of each checkpoint
 family. `canonical/train_unified.py` is the canonical trainer.
 
+## Representation Sensitivity
+
+**Status**: Known limitation (Audit 4).
+
+**Description**: The evaluation is defined entirely in the encoded (one-hot)
+space with fixed categorical groupings. No systematic comparison under
+alternative encodings (e.g., ordinal encoding, alternative binning, or
+target encoding) or under alternative threat-model definitions (e.g.,
+restricting categorical transitions to semantically observed states) is
+provided. The key open question is whether reported K=1 robust accuracy should
+be treated as an encoding-dependent measurement rather than a general
+property.
+
+**Impact**: Claims about robustness may be sensitive to the choice of
+representation; the artifact does not quantify that sensitivity.
+
+**Mitigation**: The encoded one-hot group structure is explicitly documented in
+`docs/threat_model.md` and pinned by the preprocessing configs, and the
+coverage audits in `docs/postmortem/005-audits-1-3-feature-category-semantic-coverage.md`
+confirm full coverage of the encoded state space. Full assessment would
+require retraining models under alternative encodings, which is outside the
+scope of an evaluation-only audit.
+
 ## JSMA Suitability
 
 **Status**: Known limitation.

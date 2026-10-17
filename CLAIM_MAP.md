@@ -33,5 +33,8 @@ C5 (statistical) validates C3 across seeds
 - **Threat model**: `docs/threat_model.md`
 - **Methodology**: `docs/methodology.md`
 - **ADRs**: `docs/adr/`
+- **Evaluation diagnostics & audits**: `docs/postmortem/` (K=0/K=1 evaluator
+  audit, diagnostic-vs-archived reconciliation, CICIDS2017 threat-model
+  clarification, and coverage/representation-sensitivity audits)
 - **Provenance**: `PROVENANCE.md`
 - **Limitations**: `LIMITATIONS.md`
