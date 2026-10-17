@@ -1,0 +1,47 @@
+{
+  "dataset": "unsw_nb15",
+  "method": "rsc",
+  "seed": 42,
+  "n": 197,
+  "SHA256": "6a42ed41d1ec760d3f1eb26c77f49938cd8e3db89451c67f9a777b1d600e434c",
+  "regimes": {
+    "A_all_K1": {
+      "ra": 86.80203045685279
+    },
+    "B_strict_K1": {
+      "ra": 86.80203045685279,
+      "editable": [
+        "proto",
+        "service"
+      ]
+    },
+    "B_extended_K1": {
+      "ra": 86.80203045685279,
+      "editable": [
+        "proto",
+        "service",
+        "state"
+      ]
+    },
+    "B_strict_K0": {
+      "ra": 99.49238578680203,
+      "editable": [
+        "proto",
+        "service"
+      ]
+    },
+    "B_strict_K2": {
+      "ra": 62.944162436548226,
+      "editable": [
+        "proto",
+        "service"
+      ]
+    }
+  },
+  "interpretation": {
+    "A_vs_B_strict": "Regime B-strict loses 0.0pp of attacks (groups excluded from search)",
+    "B_strict_vs_B_ext": "Adding state to B-strict gains 0.0pp of attacks",
+    "B_strict_K1_vs_K0": "K=1 (proto+service) vs K=0 gap: 12.7pp",
+    "B_strict_K1_vs_K2": "K=2 (proto+service pairs) vs K=1 gap: 23.9pp"
+  }
+}

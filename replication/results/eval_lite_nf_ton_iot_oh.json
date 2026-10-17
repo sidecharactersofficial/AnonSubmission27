@@ -1,0 +1,26 @@
+{
+ "checkpoint": "models/unified/model_adv_lite_nf_ton_iot_oh.pth",
+ "checkpoint_sha256": "3d1783ceb2b1981eecc6a2bd8cbeaddee418563e595afe152cd88fc6cb961e45",
+ "epsilon": 0.15,
+ "alpha_cont": 0.01,
+ "pgd_steps": 40,
+ "protocol": "linf-only-pgd + exhaustive-k1 (ADR-001)",
+ "dataset": "nf_ton_iot_oh",
+ "linf_only_pgd": {
+  "clean_correct": 394,
+  "robust_correct": 340,
+  "total": 500,
+  "clean_acc": 78.8,
+  "robust_acc": 68.0
+ },
+ "exhaustive_k1": {
+  "clean_correct": 394,
+  "survive_k0": 328,
+  "survive_k1": 0,
+  "total": 500,
+  "clean_acc_pct_of_full": 78.8,
+  "k0_robust_acc_pct_of_clean_correct": 83.24873096446701,
+  "k1_robust_acc_pct_of_clean_correct": 0.0,
+  "k1_robust_acc_pct_of_full": 0.0
+ }
+}

@@ -1,0 +1,35 @@
+{
+  "dataset": "unsw_nb15",
+  "method": "rsc",
+  "seed": 42,
+  "n_full": 197,
+  "n_k2_subset": 25,
+  "checkpoint_sha256": "6a42ed41d1ec760d3f1eb26c77f49938cd8e3db89451c67f9a777b1d600e434c",
+  "epsilon": 0.15,
+  "alpha": 0.01,
+  "pgd_steps": 40,
+  "state_counts": {
+    "K0": 42,
+    "K1": 42,
+    "K2": 667
+  },
+  "results": {
+    "K0": {
+      "count": 25,
+      "pct": 100.0
+    },
+    "K1": {
+      "count": 24,
+      "pct": 96.0
+    },
+    "K2": {
+      "count": 20,
+      "pct": 80.0
+    }
+  },
+  "constraint_valid": {
+    "max_L_inf": 0.15000003576278687,
+    "limit": 0.15,
+    "one_hot_valid": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+ "checkpoint": "models/unified/model_adv_rsc_nsl_kdd.pth",
+ "checkpoint_sha256": "83374498b86e1e23cca44bd80ddbea27db49a582dd33d21f91e44d4e4dc785ed",
+ "wrapper": "feature_squeezing",
+ "epsilon": 0.15,
+ "alpha_cont": 0.01,
+ "pgd_steps": 40,
+ "protocol": "exhaustive-k1 (ADR-001) through defense wrapper",
+ "dataset": "nsl-kdd",
+ "exhaustive_k1": {
+  "clean_correct": 18871,
+  "survive_k0": 18662,
+  "survive_k1": 8,
+  "total": 22543,
+  "clean_acc_pct_of_full": 83.71112984074878,
+  "k0_robust_acc_pct_of_clean_correct": 98.89248052567432,
+  "k1_robust_acc_pct_of_clean_correct": 0.042393089926342005,
+  "k1_robust_acc_pct_of_full": 0.03548773455174555
+ }
+}

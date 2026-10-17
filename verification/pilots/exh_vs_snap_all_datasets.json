@@ -1,0 +1,677 @@
+[
+  {
+    "dataset": "CICIDS2017",
+    "method": "rsc",
+    "seed": 42,
+    "exh_k1_pct": 77.84071288229106,
+    "snap_k1_pct": 86.73050588445432,
+    "gap_pp": 8.889793002163259,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "rsc",
+    "seed": 43,
+    "exh_k1_pct": 2.705574937161803,
+    "snap_k1_pct": 86.87711575164036,
+    "gap_pp": 84.17154081447856,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "rsc",
+    "seed": 44,
+    "exh_k1_pct": 0.5157060455636542,
+    "snap_k1_pct": 57.47385643030305,
+    "gap_pp": 56.9581503847394,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "rsc",
+    "seed": 45,
+    "exh_k1_pct": 1.037985708064735,
+    "snap_k1_pct": 85.93293784221761,
+    "gap_pp": 84.89495213415287,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "rsc",
+    "seed": 46,
+    "exh_k1_pct": 3.2982710503150603,
+    "snap_k1_pct": 84.57283354551639,
+    "gap_pp": 81.27456249520132,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "rsc",
+    "seed": 47,
+    "exh_k1_pct": 0.40065003059282295,
+    "snap_k1_pct": 74.73407433966773,
+    "gap_pp": 74.3334243090749,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "rsc",
+    "seed": 48,
+    "exh_k1_pct": 2.2694182552653928,
+    "snap_k1_pct": 69.99885806456217,
+    "gap_pp": 67.72943980929678,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "rsc",
+    "seed": 49,
+    "exh_k1_pct": 1.3874087125411252,
+    "snap_k1_pct": 48.30777909282893,
+    "gap_pp": 46.92037038028781,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "rsc",
+    "seed": 50,
+    "exh_k1_pct": 0.931359517263159,
+    "snap_k1_pct": 52.992750740002606,
+    "gap_pp": 52.061391222739445,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "rsc",
+    "seed": 51,
+    "exh_k1_pct": 3.3308212817825886,
+    "snap_k1_pct": 81.5793712182522,
+    "gap_pp": 78.24854993646962,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "rsc",
+    "seed": 52,
+    "exh_k1_pct": 0.6690795649644312,
+    "snap_k1_pct": 43.977034633657084,
+    "gap_pp": 43.30795506869265,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "rsc",
+    "seed": 53,
+    "exh_k1_pct": 2.008919803892862,
+    "snap_k1_pct": 55.18155621654628,
+    "gap_pp": 53.17263641265342,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "rsc",
+    "seed": 54,
+    "exh_k1_pct": 55.54341030633903,
+    "snap_k1_pct": 84.98648094390488,
+    "gap_pp": 29.443070637565853,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "hardened",
+    "seed": 42,
+    "exh_k1_pct": 19.23782558107212,
+    "snap_k1_pct": 41.43948629769794,
+    "gap_pp": 22.20166071662582,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "hardened",
+    "seed": 43,
+    "exh_k1_pct": 25.998111843162462,
+    "snap_k1_pct": 63.35850875783383,
+    "gap_pp": 37.36039691467137,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "hardened",
+    "seed": 44,
+    "exh_k1_pct": 54.66800804828974,
+    "snap_k1_pct": 80.06295196924118,
+    "gap_pp": 25.39494392095144,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "hardened",
+    "seed": 45,
+    "exh_k1_pct": 18.28116406418135,
+    "snap_k1_pct": 44.067489259268115,
+    "gap_pp": 25.786325195086764,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "hardened",
+    "seed": 46,
+    "exh_k1_pct": 44.195768037546735,
+    "snap_k1_pct": 69.89599077241269,
+    "gap_pp": 25.700222734865953,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "hardened",
+    "seed": 47,
+    "exh_k1_pct": 44.8346440372604,
+    "snap_k1_pct": 82.50100644523542,
+    "gap_pp": 37.66636240797502,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "hardened",
+    "seed": 48,
+    "exh_k1_pct": 65.80668127707135,
+    "snap_k1_pct": 81.7702719364885,
+    "gap_pp": 15.96359065941715,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "hardened",
+    "seed": 49,
+    "exh_k1_pct": 42.972051153019734,
+    "snap_k1_pct": 79.23885520755952,
+    "gap_pp": 36.26680405453979,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "hardened",
+    "seed": 50,
+    "exh_k1_pct": 20.743169094171794,
+    "snap_k1_pct": 70.93387081676103,
+    "gap_pp": 50.19070172258924,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "hardened",
+    "seed": 51,
+    "exh_k1_pct": 54.11039342337052,
+    "snap_k1_pct": 83.11103654615104,
+    "gap_pp": 29.000643122780524,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "hardened",
+    "seed": 52,
+    "exh_k1_pct": 20.972062686656614,
+    "snap_k1_pct": 65.22109132315191,
+    "gap_pp": 44.2490286364953,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "hardened",
+    "seed": 53,
+    "exh_k1_pct": 53.491854824755926,
+    "snap_k1_pct": 79.33406654163674,
+    "gap_pp": 25.84221171688082,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "hardened",
+    "seed": 54,
+    "exh_k1_pct": 39.591122472138274,
+    "snap_k1_pct": 77.26168719216726,
+    "gap_pp": 37.670564720028985,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "curriculum",
+    "seed": 42,
+    "exh_k1_pct": 17.08199774905421,
+    "snap_k1_pct": 44.649612786481384,
+    "gap_pp": 27.567615037427174,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "curriculum",
+    "seed": 43,
+    "exh_k1_pct": 16.91871113697869,
+    "snap_k1_pct": 43.020521977028274,
+    "gap_pp": 26.101810840049584,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "curriculum",
+    "seed": 44,
+    "exh_k1_pct": 3.9345695978868083,
+    "snap_k1_pct": 80.96860554355781,
+    "gap_pp": 77.03403594567101,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "curriculum",
+    "seed": 45,
+    "exh_k1_pct": 1.993614540306193,
+    "snap_k1_pct": 60.17514198394832,
+    "gap_pp": 58.18152744364213,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "curriculum",
+    "seed": 46,
+    "exh_k1_pct": 2.1316733028621604,
+    "snap_k1_pct": 79.75249459675075,
+    "gap_pp": 77.6208212938886,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "curriculum",
+    "seed": 47,
+    "exh_k1_pct": 9.022614179083135,
+    "snap_k1_pct": 68.19894471930678,
+    "gap_pp": 59.176330540223645,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "curriculum",
+    "seed": 48,
+    "exh_k1_pct": 3.8229952313211837,
+    "snap_k1_pct": 48.35386638752449,
+    "gap_pp": 44.530871156203304,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "curriculum",
+    "seed": 49,
+    "exh_k1_pct": 6.290122178504866,
+    "snap_k1_pct": 85.90323548103771,
+    "gap_pp": 79.61311330253284,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "curriculum",
+    "seed": 50,
+    "exh_k1_pct": 8.58665191082234,
+    "snap_k1_pct": 68.32818663763098,
+    "gap_pp": 59.74153472680864,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "curriculum",
+    "seed": 51,
+    "exh_k1_pct": 13.714535448942641,
+    "snap_k1_pct": 77.74418252035784,
+    "gap_pp": 64.0296470714152,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "curriculum",
+    "seed": 52,
+    "exh_k1_pct": 7.654893851470767,
+    "snap_k1_pct": 88.4705238378042,
+    "gap_pp": 80.81562998633342,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "curriculum",
+    "seed": 53,
+    "exh_k1_pct": 3.5491582720187536,
+    "snap_k1_pct": 85.82623704174873,
+    "gap_pp": 82.27707876972997,
+    "hash_ok": true
+  },
+  {
+    "dataset": "CICIDS2017",
+    "method": "curriculum",
+    "seed": 54,
+    "exh_k1_pct": 3.421292376863007,
+    "snap_k1_pct": 73.87539443751376,
+    "gap_pp": 70.45410206065075,
+    "hash_ok": true
+  },
+  {
+    "dataset": "NSL-KDD",
+    "method": "rsc",
+    "seed": 42,
+    "exh_k1_pct": 0.0,
+    "snap_k1_pct": 0.9462254395036195,
+    "gap_pp": 0.9462254395036195,
+    "hash_ok": true
+  },
+  {
+    "dataset": "NSL-KDD",
+    "method": "rsc",
+    "seed": 43,
+    "exh_k1_pct": 0.0,
+    "snap_k1_pct": 1.6166035319852743,
+    "gap_pp": 1.6166035319852743,
+    "hash_ok": true
+  },
+  {
+    "dataset": "NSL-KDD",
+    "method": "rsc",
+    "seed": 44,
+    "exh_k1_pct": 0.0,
+    "snap_k1_pct": 7.382307294361095,
+    "gap_pp": 7.382307294361095,
+    "hash_ok": true
+  },
+  {
+    "dataset": "NSL-KDD",
+    "method": "hardened",
+    "seed": 42,
+    "exh_k1_pct": 0.0,
+    "snap_k1_pct": 10.749830355123276,
+    "gap_pp": 10.749830355123276,
+    "hash_ok": true
+  },
+  {
+    "dataset": "NSL-KDD",
+    "method": "hardened",
+    "seed": 43,
+    "exh_k1_pct": 0.0,
+    "snap_k1_pct": 14.671495085359542,
+    "gap_pp": 14.671495085359542,
+    "hash_ok": true
+  },
+  {
+    "dataset": "NSL-KDD",
+    "method": "hardened",
+    "seed": 44,
+    "exh_k1_pct": 0.0,
+    "snap_k1_pct": 29.374402787926474,
+    "gap_pp": 29.374402787926474,
+    "hash_ok": true
+  },
+  {
+    "dataset": "NSL-KDD",
+    "method": "curriculum",
+    "seed": 42,
+    "exh_k1_pct": 0.0,
+    "snap_k1_pct": 26.75825077992447,
+    "gap_pp": 26.75825077992447,
+    "hash_ok": true
+  },
+  {
+    "dataset": "NSL-KDD",
+    "method": "curriculum",
+    "seed": 43,
+    "exh_k1_pct": 0.04653327128897162,
+    "snap_k1_pct": 22.952536063285248,
+    "gap_pp": 22.906002791996276,
+    "hash_ok": true
+  },
+  {
+    "dataset": "NSL-KDD",
+    "method": "curriculum",
+    "seed": 44,
+    "exh_k1_pct": 0.04664723032069971,
+    "snap_k1_pct": 37.3002915451895,
+    "gap_pp": 37.2536443148688,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "rsc",
+    "seed": 42,
+    "exh_k1_pct": 85.46593085525123,
+    "snap_k1_pct": 98.41158803329884,
+    "gap_pp": 12.945657178047611,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "rsc",
+    "seed": 43,
+    "exh_k1_pct": 64.34536503697208,
+    "snap_k1_pct": 92.48141430649952,
+    "gap_pp": 28.136049269527433,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "rsc",
+    "seed": 44,
+    "exh_k1_pct": 71.4643319096524,
+    "snap_k1_pct": 95.15676102289783,
+    "gap_pp": 23.692429113245424,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "rsc",
+    "seed": 46,
+    "exh_k1_pct": 86.3430705817634,
+    "snap_k1_pct": 98.72497588277034,
+    "gap_pp": 12.381905301006938,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "rsc",
+    "seed": 47,
+    "exh_k1_pct": 80.57865982607517,
+    "snap_k1_pct": 98.09352396100543,
+    "gap_pp": 17.514864134930264,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "rsc",
+    "seed": 48,
+    "exh_k1_pct": 67.0913933053726,
+    "snap_k1_pct": 98.57332514711277,
+    "gap_pp": 31.481931841740163,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "rsc",
+    "seed": 49,
+    "exh_k1_pct": 81.60161279054681,
+    "snap_k1_pct": 99.07005059930738,
+    "gap_pp": 17.46843780876057,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "rsc",
+    "seed": 50,
+    "exh_k1_pct": 85.458637054932,
+    "snap_k1_pct": 97.20984745651225,
+    "gap_pp": 11.751210401580252,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "rsc",
+    "seed": 51,
+    "exh_k1_pct": 56.52445560503744,
+    "snap_k1_pct": 99.53949246360553,
+    "gap_pp": 43.01503685856809,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "hardened",
+    "seed": 42,
+    "exh_k1_pct": 85.400630613034,
+    "snap_k1_pct": 98.3004938871992,
+    "gap_pp": 12.899863274165199,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "hardened",
+    "seed": 43,
+    "exh_k1_pct": 59.7852102484255,
+    "snap_k1_pct": 96.17231088620734,
+    "gap_pp": 36.38710063778184,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "hardened",
+    "seed": 44,
+    "exh_k1_pct": 62.17955362767221,
+    "snap_k1_pct": 95.69355957611373,
+    "gap_pp": 33.514005948441515,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "hardened",
+    "seed": 46,
+    "exh_k1_pct": 68.99985230896964,
+    "snap_k1_pct": 90.81920622058654,
+    "gap_pp": 21.8193539116169,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "hardened",
+    "seed": 47,
+    "exh_k1_pct": 75.36322562402613,
+    "snap_k1_pct": 98.12476311372347,
+    "gap_pp": 22.761537489697346,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "hardened",
+    "seed": 48,
+    "exh_k1_pct": 79.3000890258654,
+    "snap_k1_pct": 98.01188874561358,
+    "gap_pp": 18.71179971974817,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "hardened",
+    "seed": 49,
+    "exh_k1_pct": 81.09940119760479,
+    "snap_k1_pct": 97.40858283433133,
+    "gap_pp": 16.309181636726535,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "hardened",
+    "seed": 50,
+    "exh_k1_pct": 84.00634787555768,
+    "snap_k1_pct": 98.02676887145553,
+    "gap_pp": 14.020420995897851,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "hardened",
+    "seed": 51,
+    "exh_k1_pct": 67.99303784723537,
+    "snap_k1_pct": 95.34879547978444,
+    "gap_pp": 27.35575763254907,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "curriculum",
+    "seed": 42,
+    "exh_k1_pct": 18.651935771916957,
+    "snap_k1_pct": 79.0048872660012,
+    "gap_pp": 60.35295149408425,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "curriculum",
+    "seed": 43,
+    "exh_k1_pct": 56.661676347885106,
+    "snap_k1_pct": 99.42451643811006,
+    "gap_pp": 42.762840090224955,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "curriculum",
+    "seed": 44,
+    "exh_k1_pct": 56.63154700830815,
+    "snap_k1_pct": 98.9993093178216,
+    "gap_pp": 42.36776230951345,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "curriculum",
+    "seed": 46,
+    "exh_k1_pct": 56.75908737050123,
+    "snap_k1_pct": 99.66285406311755,
+    "gap_pp": 42.90376669261632,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "curriculum",
+    "seed": 47,
+    "exh_k1_pct": 62.6680320832984,
+    "snap_k1_pct": 97.72470485840789,
+    "gap_pp": 35.05667277510949,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "curriculum",
+    "seed": 48,
+    "exh_k1_pct": 64.98114050127192,
+    "snap_k1_pct": 97.37003692155565,
+    "gap_pp": 32.38889642028373,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "curriculum",
+    "seed": 49,
+    "exh_k1_pct": 57.73921097756458,
+    "snap_k1_pct": 99.50134644444843,
+    "gap_pp": 41.76213546688385,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "curriculum",
+    "seed": 50,
+    "exh_k1_pct": 57.856967676457515,
+    "snap_k1_pct": 96.9796001379797,
+    "gap_pp": 39.12263246152219,
+    "hash_ok": true
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "method": "curriculum",
+    "seed": 51,
+    "exh_k1_pct": 56.6406444929269,
+    "snap_k1_pct": 99.6993909972993,
+    "gap_pp": 43.0587465043724,
+    "hash_ok": true
+  }
+]

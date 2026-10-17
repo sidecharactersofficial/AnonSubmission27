@@ -1,0 +1,26 @@
+{
+ "checkpoint": "models/unified/model_adv_hardened_nsl_kdd.pth",
+ "checkpoint_sha256": "e6c076f95d765b68326b1bfcfbd159e74297f25e379cc86bad9c37ae64e0c3a5",
+ "epsilon": 0.15,
+ "alpha_cont": 0.01,
+ "pgd_steps": 40,
+ "protocol": "linf-only-pgd + exhaustive-k1 (ADR-001)",
+ "dataset": "nsl-kdd",
+ "linf_only_pgd": {
+  "clean_correct": 17195,
+  "robust_correct": 16233,
+  "total": 22543,
+  "clean_acc": 76.2764494521581,
+  "robust_acc": 72.0090493723107
+ },
+ "exhaustive_k1": {
+  "clean_correct": 17195,
+  "survive_k0": 16233,
+  "survive_k1": 8,
+  "total": 22543,
+  "clean_acc_pct_of_full": 76.2764494521581,
+  "k0_robust_acc_pct_of_clean_correct": 94.40535039255597,
+  "k1_robust_acc_pct_of_clean_correct": 0.04652515266065717,
+  "k1_robust_acc_pct_of_full": 0.03548773455174555
+ }
+}

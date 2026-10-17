@@ -1,0 +1,72 @@
+{
+  "cicids2017_rsc_s42": {
+    "n": 165,
+    "defenses": {
+      "no_defense": {
+        "K1_RA": 81.21212121212122
+      },
+      "feature_squeeze_4bit": {
+        "K1_RA": 84.84848484848484
+      },
+      "ranmask_0.3": {
+        "K1_RA": 81.21212121212122
+      }
+    }
+  },
+  "cicids2017_hardened_s42": {
+    "n": 165,
+    "defenses": {
+      "no_defense": {
+        "K1_RA": 26.666666666666668
+      },
+      "feature_squeeze_4bit": {
+        "K1_RA": 30.909090909090907
+      },
+      "ranmask_0.3": {
+        "K1_RA": 26.666666666666668
+      }
+    }
+  },
+  "cicids2017_curriculum_s42": {
+    "n": 141,
+    "defenses": {
+      "no_defense": {
+        "K1_RA": 27.659574468085108
+      },
+      "feature_squeeze_4bit": {
+        "K1_RA": 71.63120567375887
+      },
+      "ranmask_0.3": {
+        "K1_RA": 27.659574468085108
+      }
+    }
+  },
+  "unsw_nb15_rsc_s42": {
+    "n": 197,
+    "defenses": {
+      "no_defense": {
+        "K1_RA": 86.80203045685279
+      },
+      "feature_squeeze_4bit": {
+        "K1_RA": 91.37055837563452
+      },
+      "ranmask_0.3": {
+        "K1_RA": 87.30964467005076
+      }
+    }
+  },
+  "nsl-kdd_rsc_s42": {
+    "n": 170,
+    "defenses": {
+      "no_defense": {
+        "K1_RA": 0.0
+      },
+      "feature_squeeze_4bit": {
+        "K1_RA": 0.0
+      },
+      "ranmask_0.3": {
+        "K1_RA": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+ "nsl-kdd": {
+  "n_rows": 2000,
+  "groups": [
+   {
+    "group": [
+     4,
+     5,
+     6
+    ],
+    "onehot_frac": 1.0,
+    "valid_states_observed": 3
+   },
+   {
+    "group": [
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "onehot_frac": 1.0,
+    "valid_states_observed": 11
+   }
+  ],
+  "continuous": {
+   "min": 0.0,
+   "max": 1.0,
+   "within_[0,1]_frac": 1.0
+  }
+ },
+ "unsw_nb15": {
+  "n_rows": 2000,
+  "groups": [
+   {
+    "group": [
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48
+    ],
+    "onehot_frac": 1.0,
+    "valid_states_observed": 9
+   },
+   {
+    "group": [
+     49,
+     50,
+     51,
+     52,
+     53,
+     54,
+     55,
+     56,
+     57,
+     58,
+     59
+    ],
+    "onehot_frac": 1.0,
+    "valid_states_observed": 6
+   },
+   {
+    "group": [
+     60,
+     61,
+     62,
+     63,
+     64,
+     65,
+     66,
+     67,
+     68,
+     69,
+     70,
+     71,
+     72
+    ],
+    "onehot_frac": 1.0,
+    "valid_states_observed": 8
+   },
+   {
+    "group": [
+     73,
+     74
+    ],
+    "onehot_frac": 1.0,
+    "valid_states_observed": 2
+   },
+   {
+    "group": [
+     75,
+     76,
+     77,
+     78
+    ],
+    "onehot_frac": 0.414000004529953,
+    "valid_states_observed": 4
+   }
+  ],
+  "continuous": {
+   "min": 0.0,
+   "max": 1.0,
+   "within_[0,1]_frac": 1.0
+  }
+ },
+ "cicids2017": {
+  "n_rows": 2000,
+  "groups": [
+   {
+    "group": [
+     77,
+     78,
+     79
+    ],
+    "onehot_frac": 1.0,
+    "valid_states_observed": 3
+   }
+  ],
+  "continuous": {
+   "min": 0.0,
+   "max": 1.0,
+   "within_[0,1]_frac": 1.0
+  }
+ },
+ "nf_ton_iot": {
+  "n_rows": 500,
+  "groups": [],
+  "continuous": {
+   "min": 0.0,
+   "max": 1.0,
+   "within_[0,1]_frac": 1.0
+  }
+ },
+ "nf_ton_iot_oh": {
+  "n_rows": 500,
+  "groups": [
+   {
+    "group": [
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45
+    ],
+    "onehot_frac": 1.0,
+    "valid_states_observed": 2
+   },
+   {
+    "group": [
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     54,
+     55,
+     56,
+     57,
+     58
+    ],
+    "onehot_frac": 1.0,
+    "valid_states_observed": 8
+   }
+  ],
+  "continuous": {
+   "min": 0.0,
+   "max": 1.0,
+   "within_[0,1]_frac": 1.0
+  }
+ }
+}

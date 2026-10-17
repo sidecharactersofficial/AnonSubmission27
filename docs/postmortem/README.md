@@ -17,6 +17,7 @@ the coverage and representation-sensitivity audits.
 | 005 | `005-audits-1-3-feature-category-semantic-coverage.md` | Audits of feature coverage, category coverage, and semantic validity |
 | 006 | `006-audit-4-representation-sensitivity.md` | Representation-sensitivity audit (known limitation, see `LIMITATIONS.md`) |
 | 007 | `007-exh-vs-snap-canonical-comparison.md` | EXH vs SNAP canonical comparison across 75 checkpoints, plus staged K-budget evaluation on UNSW-NB15 |
+| 008 | `008-nf-ton-iot-and-external-works-replication.md` | NF-ToN-IoT encoding-sensitivity study and CAA+MOEVA / Illusion/Takedown replication (post-freeze addendum, `replication/`) |
 
 ## Note on paths
 
@@ -45,3 +46,7 @@ etc.). Reported checkpoint SHAs are the same pins used by
   where both agree at 0%); K=0 matches exactly under controlled init.
   Staged K=2 evaluation shows UNSW-NB15's residual robustness is largely a
   K=1 threat-model incompleteness artifact.
+- **Encoding sensitivity confirmed independently** (postmortem 008): the
+  same training/eval protocol on NF-ToN-IoT shows native-encoded K=1 == K=0
+  while one-hot-encoded K=1 collapses to 0% — direct evidence that K=1
+  measurements are encoding-dependent.

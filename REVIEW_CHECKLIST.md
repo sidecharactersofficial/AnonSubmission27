@@ -71,6 +71,12 @@ to a claim or reproducibility requirement.
 - [ ] EXH vs SNAP canonical comparison (007): 66/75 positive K=1 gaps,
       K=0 exact match under controlled init; K-budget staging on UNSW-NB15
       notes K=1 threat-model incompleteness
+- [ ] OPTIONAL — replication addendum (008): confirm it is self-contained
+      under `replication/`, none of its artifacts are in
+      `manifest/checkpoint_sha256.json`, and the added checkpoint/model files
+      do not affect canonical claims; note the NF-ToN-IoT native-vs-onehot
+      encoding result as additional support for the representation-sensitivity
+      limitation
 
 ## Limitations
 - [ ] Dataset reconstruction limitation understood (CICIDS2017/UNSW-NB15)

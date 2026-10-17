@@ -1,0 +1,39 @@
+{
+  "test_1_known_vulnerable_category": {
+    "passed": true,
+    "description": "Tiny model with protocol=icmp flip causing misclassification. EXH K=1 finds the flip.",
+    "verified": "categorical enumeration path is real, correctly invoked, and finds known vulnerabilities"
+  },
+  "test_2_continuous_only": {
+    "passed": true,
+    "description": "Empty CATEGORICAL_GROUPS. Falls back to continuous PGD. Attack succeeds.",
+    "verified": "PGD-only path works correctly when no categorical groups"
+  },
+  "test_3_single_slot_group": {
+    "passed": true,
+    "description": "Single-slot categorical (CATEGORICAL_GROUPS=[[3]]). K=1 enumerates only the original state.",
+    "verified": "No invalid states generated for single-slot groups"
+  },
+  "test_4_constraint_enforcement": {
+    "passed": true,
+    "description": "CICIDS2017 config. All candidate states satisfy one-hot + Linf constraints.",
+    "verified": "one_hot_valid=True, all_sum_to_1=True, max_cont_L_inf=0.150000\u22640.15"
+  },
+  "test_5_result_provenance": {
+    "passed": true,
+    "description": "EXH result file for CICIDS2017 RSC seed42 traced to checkpoint + config.",
+    "verified": "checkpoint_sha256 matches, epsilon=0.15 matches eval_protocol, nesting K1\u2264K0 holds"
+  },
+  "audit_table": {
+    "feature_metadata": "PASS \u2014 configs in app/ml/data/ explicitly define categorical groups",
+    "group_discovery": "PASS \u2014 config.CATEGORICAL_GROUPS discovered with correct cardinalities",
+    "attack_execution": "PASS \u2014 Test 1 confirms categorical alternatives generated and evaluated",
+    "constraint_enforcement": "PASS \u2014 Test 4 confirms one-hot + Linf constraints enforced",
+    "attack_effectiveness": "PASS \u2014 Test 1 finds known vulnerable category substitution",
+    "result_provenance": "PASS \u2014 Test 5 traces metrics to verified checkpoint + config"
+  },
+  "two_possibilities_ruling": {
+    "flattened_one_hot_treated_as_continuous": "RULED OUT \u2014 Test 4 shows categorical columns are one-hot and frozen during PGD",
+    "categorical_search_not_exercised": "RULED OUT \u2014 Test 1 shows categorical enumeration is correctly invoked"
+  }
+}

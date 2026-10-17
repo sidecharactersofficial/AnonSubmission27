@@ -1,0 +1,20 @@
+{
+ "checkpoint": "models/unified/model_adv_hardened_cicids2017.pth",
+ "checkpoint_sha256": "29d7c3d3ec72a05320373e061bb10fe27e8eee3532acfeab623d07930f903f95",
+ "wrapper": "feature_squeezing",
+ "epsilon": 0.15,
+ "alpha_cont": 0.01,
+ "pgd_steps": 40,
+ "protocol": "exhaustive-k1 (ADR-001) through defense wrapper",
+ "dataset": "cicids2017",
+ "exhaustive_k1": {
+  "clean_correct": 499774,
+  "survive_k0": 492825,
+  "survive_k1": 478584,
+  "total": 623869,
+  "clean_acc_pct_of_full": 80.10880489333499,
+  "k0_robust_acc_pct_of_clean_correct": 98.6095715263299,
+  "k1_robust_acc_pct_of_clean_correct": 95.76008355776811,
+  "k1_robust_acc_pct_of_full": 76.71225850298701
+ }
+}

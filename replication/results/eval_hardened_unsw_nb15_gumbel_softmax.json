@@ -1,0 +1,20 @@
+{
+ "checkpoint": "models/unified/model_adv_hardened_unsw_nb15.pth",
+ "checkpoint_sha256": "a5bf823550dfe99f5824a2fbef3d01b30ad165d71ee1d59111db4d82fb7abb23",
+ "wrapper": "gumbel_softmax",
+ "epsilon": 0.15,
+ "alpha_cont": 0.01,
+ "pgd_steps": 40,
+ "protocol": "exhaustive-k1 (ADR-001) through defense wrapper",
+ "dataset": "unsw_nb15",
+ "exhaustive_k1": {
+  "clean_correct": 498192,
+  "survive_k0": 433639,
+  "survive_k1": 278380,
+  "total": 508010,
+  "clean_acc_pct_of_full": 98.06736087872287,
+  "k0_robust_acc_pct_of_clean_correct": 87.04254584577833,
+  "k1_robust_acc_pct_of_clean_correct": 55.87805504705013,
+  "k1_robust_acc_pct_of_full": 54.79813389500207
+ }
+}

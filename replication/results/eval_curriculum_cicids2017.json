@@ -1,0 +1,26 @@
+{
+ "checkpoint": "models/unified/model_adv_curriculum_cicids2017.pth",
+ "checkpoint_sha256": "728bb321d1621a020366381ecf91aeb960cbbedcd9bf116b307d4861751313b9",
+ "epsilon": 0.15,
+ "alpha_cont": 0.01,
+ "pgd_steps": 40,
+ "protocol": "linf-only-pgd + exhaustive-k1 (ADR-001)",
+ "dataset": "cicids2017",
+ "linf_only_pgd": {
+  "clean_correct": 500916,
+  "robust_correct": 456062,
+  "total": 623869,
+  "clean_acc": 80.29185614287616,
+  "robust_acc": 73.10220575152796
+ },
+ "exhaustive_k1": {
+  "clean_correct": 500916,
+  "survive_k0": 456163,
+  "survive_k1": 35315,
+  "total": 623869,
+  "clean_acc_pct_of_full": 80.29185614287616,
+  "k0_robust_acc_pct_of_clean_correct": 91.06576751391451,
+  "k1_robust_acc_pct_of_clean_correct": 7.050084245661948,
+  "k1_robust_acc_pct_of_full": 5.660643500478465
+ }
+}

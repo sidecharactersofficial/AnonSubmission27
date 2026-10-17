@@ -1,0 +1,26 @@
+{
+ "checkpoint": "models/unified/model_adv_curriculum_unsw_nb15.pth",
+ "checkpoint_sha256": "f2696ba0aaf958a3ec527c01f1ad25329cdf5fa8e13342c4018580911f0ed8aa",
+ "epsilon": 0.15,
+ "alpha_cont": 0.01,
+ "pgd_steps": 40,
+ "protocol": "linf-only-pgd + exhaustive-k1 (ADR-001)",
+ "dataset": "unsw_nb15",
+ "linf_only_pgd": {
+  "clean_correct": 500935,
+  "robust_correct": 499694,
+  "total": 508010,
+  "clean_acc": 98.60731087970709,
+  "robust_acc": 98.36302434991437
+ },
+ "exhaustive_k1": {
+  "clean_correct": 500935,
+  "survive_k0": 499689,
+  "survive_k1": 336536,
+  "total": 508010,
+  "clean_acc_pct_of_full": 98.60731087970709,
+  "k0_robust_acc_pct_of_clean_correct": 99.75126513419906,
+  "k1_robust_acc_pct_of_clean_correct": 67.18157046323375,
+  "k1_robust_acc_pct_of_full": 66.24594004055038
+ }
+}

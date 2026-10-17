@@ -1,0 +1,7 @@
+{
+  "categorical_enumeration": true,
+  "mixed_constraints": true,
+  "tiny_model": true,
+  "pgd_verification": true,
+  "cross_method": true
+}

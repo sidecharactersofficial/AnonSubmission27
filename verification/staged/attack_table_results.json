@@ -1,0 +1,118 @@
+{
+  "nsl-kdd_rsc_s42": {
+    "n_clean_correct": 170,
+    "attacks": {
+      "EXH_K1": {
+        "ra": 0.0,
+        "time_per_100": 0.3147355247946346,
+        "count": 0
+      },
+      "SNAP_K1": {
+        "ra": 92.3529411764706,
+        "time_per_100": 0.1924720932455624,
+        "count": 157,
+        "optimality_gap_vs_EXH": -92.4
+      },
+      "CatPGD_K1": {
+        "ra": 0.0,
+        "time_per_100": 2.9281310474171356,
+        "count": 0,
+        "optimality_gap_vs_EXH": 0.0
+      },
+      "MoEvA2": {
+        "ra": 70.0,
+        "time_per_100": 162.9653081893921,
+        "count": 35,
+        "n_samples": 50,
+        "optimality_gap_vs_EXH": -70.0
+      }
+    }
+  },
+  "cicids2017_hardened_s42": {
+    "n_clean_correct": 165,
+    "attacks": {
+      "EXH_K1": {
+        "ra": 26.666666666666668,
+        "time_per_100": 0.09771925030332623,
+        "count": 44
+      },
+      "SNAP_K1": {
+        "ra": 44.84848484848485,
+        "time_per_100": 0.11726292696866121,
+        "count": 74,
+        "optimality_gap_vs_EXH": -18.2
+      },
+      "CatPGD_K1": {
+        "ra": 28.484848484848484,
+        "time_per_100": 1.3760666413740679,
+        "count": 47,
+        "optimality_gap_vs_EXH": -1.8
+      },
+      "MoEvA2": {
+        "ra": 88.0,
+        "time_per_100": 177.51997995376587,
+        "count": 44,
+        "n_samples": 50,
+        "optimality_gap_vs_EXH": -61.3
+      }
+    }
+  },
+  "cicids2017_rsc_s42": {
+    "n_clean_correct": 165,
+    "attacks": {
+      "EXH_K1": {
+        "ra": 81.21212121212122,
+        "time_per_100": 0.07463281804865057,
+        "count": 134
+      },
+      "SNAP_K1": {
+        "ra": 84.84848484848484,
+        "time_per_100": 0.06848479762221828,
+        "count": 140,
+        "optimality_gap_vs_EXH": -3.6
+      },
+      "CatPGD_K1": {
+        "ra": 89.6969696969697,
+        "time_per_100": 0.4795009439641779,
+        "count": 148,
+        "optimality_gap_vs_EXH": -8.5
+      },
+      "MoEvA2": {
+        "ra": 92.0,
+        "time_per_100": 192.93733263015747,
+        "count": 46,
+        "n_samples": 50,
+        "optimality_gap_vs_EXH": -10.8
+      }
+    }
+  },
+  "unsw_nb15_rsc_s42": {
+    "n_clean_correct": 197,
+    "attacks": {
+      "EXH_K1": {
+        "ra": 86.80203045685279,
+        "time_per_100": 0.24365822070746254,
+        "count": 171
+      },
+      "SNAP_K1": {
+        "ra": 100.0,
+        "time_per_100": 0.329132733611286,
+        "count": 197,
+        "optimality_gap_vs_EXH": -13.2
+      },
+      "CatPGD_K1": {
+        "ra": 87.81725888324873,
+        "time_per_100": 17.24782740404158,
+        "count": 173,
+        "optimality_gap_vs_EXH": -1.0
+      },
+      "MoEvA2": {
+        "ra": 98.0,
+        "time_per_100": 184.70013093948364,
+        "count": 49,
+        "n_samples": 50,
+        "optimality_gap_vs_EXH": -11.2
+      }
+    }
+  }
+}

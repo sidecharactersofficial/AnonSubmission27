@@ -1,0 +1,595 @@
+{
+  "phase3_threat_model": {
+    "nsl-kdd": {
+      "feature_dim": 18,
+      "continuous_cols": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "categorical_groups": [
+        [
+          4,
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ]
+      ],
+      "total_samples": 22543,
+      "expected_total": 22543,
+      "one_hot_valid": true,
+      "sparse_one_hot": false,
+      "continuous_range": [
+        0.0,
+        1.0
+      ],
+      "data_sha256": "e0e48f5bcfce97e9599a2d776562d270e2e02f4dbdc2beb15db6c9eb0d9bfcf3",
+      "threat_space": {
+        "groups": [
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ]
+        ],
+        "group_sizes": [
+          3,
+          11
+        ],
+        "total_categorical_cols": 14,
+        "alternatives_per_sample_k1": 14,
+        "distinct_alternatives_k1": 13,
+        "continuous_features": 4,
+        "epsilon": 0.15,
+        "feature_dim": 18
+      },
+      "samples_match_expected": true
+    },
+    "cicids2017": {
+      "feature_dim": 80,
+      "continuous_cols": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76
+      ],
+      "categorical_groups": [
+        [
+          77,
+          78,
+          79
+        ]
+      ],
+      "total_samples": 623869,
+      "expected_total": 623869,
+      "one_hot_valid": true,
+      "sparse_one_hot": false,
+      "continuous_range": [
+        0.0,
+        1.0
+      ],
+      "data_sha256": "4dff50497e77510d57cf7b495c0f70b880fbdcd536882149fe3ff40e054a1665",
+      "threat_space": {
+        "groups": [
+          [
+            77,
+            78,
+            79
+          ]
+        ],
+        "group_sizes": [
+          3
+        ],
+        "total_categorical_cols": 3,
+        "alternatives_per_sample_k1": 3,
+        "distinct_alternatives_k1": 3,
+        "continuous_features": 77,
+        "epsilon": 0.15,
+        "feature_dim": 80
+      },
+      "samples_match_expected": true
+    },
+    "unsw_nb15": {
+      "feature_dim": 79,
+      "continuous_cols": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "categorical_groups": [
+        [
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48
+        ],
+        [
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59
+        ],
+        [
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72
+        ],
+        [
+          73,
+          74
+        ],
+        [
+          75,
+          76,
+          77,
+          78
+        ]
+      ],
+      "total_samples": 508010,
+      "expected_total": 508010,
+      "one_hot_valid": false,
+      "sparse_one_hot": false,
+      "continuous_range": [
+        0.0,
+        1.0
+      ],
+      "data_sha256": "fd5420771f657d622a0062e1385cb69772a7751e405ab93d1f6fff2766d853e1",
+      "threat_space": {
+        "groups": [
+          [
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48
+          ],
+          [
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59
+          ],
+          [
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72
+          ],
+          [
+            73,
+            74
+          ],
+          [
+            75,
+            76,
+            77,
+            78
+          ]
+        ],
+        "group_sizes": [
+          11,
+          11,
+          13,
+          2,
+          4
+        ],
+        "total_categorical_cols": 41,
+        "alternatives_per_sample_k1": 41,
+        "distinct_alternatives_k1": 37,
+        "continuous_features": 38,
+        "epsilon": 0.15,
+        "feature_dim": 79
+      },
+      "samples_match_expected": true
+    },
+    "nf_ton_iot": {
+      "feature_dim": 41,
+      "continuous_cols": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "categorical_groups": [],
+      "total_samples": 200000,
+      "expected_total": 200000,
+      "one_hot_valid": true,
+      "sparse_one_hot": false,
+      "continuous_range": [
+        0.0,
+        1.0
+      ],
+      "data_sha256": "a834ae062bdcc05173fa71843bfc5134044efdf14b3dfb7b2f13171819715b27",
+      "threat_space": {
+        "groups": [],
+        "group_sizes": [],
+        "total_categorical_cols": 0,
+        "alternatives_per_sample_k1": 0,
+        "distinct_alternatives_k1": 1,
+        "continuous_features": 41,
+        "epsilon": 0.15,
+        "feature_dim": 41
+      },
+      "samples_match_expected": true
+    },
+    "nf_ton_iot_oh": {
+      "feature_dim": 59,
+      "continuous_cols": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ],
+      "categorical_groups": [
+        [
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45
+        ],
+        [
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58
+        ]
+      ],
+      "total_samples": 200000,
+      "expected_total": 200000,
+      "one_hot_valid": true,
+      "sparse_one_hot": false,
+      "continuous_range": [
+        0.0,
+        1.0
+      ],
+      "data_sha256": "03ec7be0112f6773aabd7b7f5f0de16da8323218f9a4910e6f5ab4b6dfd86495",
+      "threat_space": {
+        "groups": [
+          [
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ],
+          [
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58
+          ]
+        ],
+        "group_sizes": [
+          7,
+          13
+        ],
+        "total_categorical_cols": 20,
+        "alternatives_per_sample_k1": 20,
+        "distinct_alternatives_k1": 19,
+        "continuous_features": 39,
+        "epsilon": 0.15,
+        "feature_dim": 59
+      },
+      "samples_match_expected": true
+    }
+  },
+  "phase4_ibp": true,
+  "phase4_crown_stages": true,
+  "phase4_cert_aggregation": true,
+  "phase4_crown_real": true,
+  "phase5_findings": {
+    "method_discrepancy": {
+      "finding": "Two evaluation methods in use: EXH (exhaustive enumeration) and SNAP (gradient-snapped). EXH is the correct threat-model evaluation; SNAP systematically overestimates robustness.",
+      "evidence": {
+        "nsl_kdd_same_model": "Both agree at K1=0% (vulnerability too severe for SNAP to miss)",
+        "cicids2017_same_model_seed42": "EXH K1=86.0% vs SNAP K1=95.5% on 200 samples (9.5pp gap)",
+        "exh_vs_snap_full_json": "Across 39 model-runs, EXH consistently < SNAP (max gap ~40pp)"
+      }
+    },
+    "model_discrepancy": {
+      "finding": "Archived legacy results (37.83% CICIDS K1) use DIFFERENT checkpoints from unified results (60-70% mean K1). Comparison requires same model + same method.",
+      "evidence": {
+        "legacy_sha": "6dca73eb1477be61d8aa1df7e5f74043eb58a0bcea3558f57557c16b1c0bf2cb",
+        "unified_seed42_sha": "795f5122702a18878f8a3d466c6a254ba58911c0a8a857bee9fa1669b35a3bc6"
+      }
+    },
+    "k0_k1_nesting": {
+      "finding": "K=1 <= K=0 in all tested cases (AND semantics correctly enforced).",
+      "evidence": {
+        "cicids2017_13_seeds": "13 seeds, 0 K1>K0 nesting violations",
+        "nsl_kdd_empirical": "Empirical K1 \u2286 K0 (0 violations)",
+        "nsl_kdd_certified": "Certified K1=0 <= Certified K0=20 (100 samples)"
+      }
+    },
+    "naming_inconsistency": {
+      "finding": "RESEARCH_STATUS.md reports '11.69% \u00b1 24.9' for CICIDS2017 RSC K1, but per-seed data shows mean 60.28% \u00b1 13.10%. This figure appears to come from a different evaluation or aggregation convention.",
+      "evidence": {
+        "phase2_unified_mean": "60.28% \u00b1 13.10% (seeds 42-54, gradient-snapped)",
+        "phase2_canonical_same_model": "EXH K1=86.0% vs SNAP K1=95.5% (seed42)"
+      }
+    },
+    "denominator_inconsistency": {
+      "finding": "Legacy results store counts (total, clean_correct, robust_correct). Unified results store only percentages (no recoverable numerators). This prevents exact cross-validation of unified results.",
+      "evidence": {
+        "legacy_format": "results/*.json: {total, clean_correct, robust_correct_k0, robust_correct_k1}",
+        "unified_format": "results/unified/*.json: {clean_acc, k0_acc, k1_acc} \u2014 no counts"
+      }
+    }
+  },
+  "overall_phases34": true
+}

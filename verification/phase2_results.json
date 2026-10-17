@@ -1,0 +1,55 @@
+{
+  "nsl_kdd_rsc_canonical": {
+    "archived": {
+      "clean_correct": 18628,
+      "total": 22543,
+      "robust_correct": {
+        "0": 18106,
+        "1": 0
+      },
+      "completed_batches": 12
+    },
+    "reproduced": {
+      "total": 22543,
+      "clean_correct": 18628,
+      "robust_correct": {
+        "0": 18106,
+        "1": 0
+      }
+    },
+    "matches": {
+      "clean": true,
+      "k0": true,
+      "k1": true
+    },
+    "unified_k0": 18122,
+    "unified_k1": 0
+  },
+  "cicids2017_rsc_unified": {
+    "n_seeds": 13,
+    "k0_mean": 72.06388372706944,
+    "k0_std": 7.588587194207228,
+    "k1_mean": 60.28066543062481,
+    "k1_std": 13.100100825944656,
+    "nesting_violations": 0
+  },
+  "cicids2017_same_model": {
+    "model_sha": "795f5122702a18878f8a3d466c6a254ba58911c0a8a857bee9fa1669b35a3bc6",
+    "n_samples": 200,
+    "canonical_k0": 181,
+    "canonical_k1": 172,
+    "unified_k0": 184,
+    "unified_k1": 191,
+    "canon_k1_pct": 86.0,
+    "uni_k1_pct": 95.5,
+    "difference": 19,
+    "method_discrepancy": "unified overestimates robustness"
+  },
+  "denominator_recommendation": {
+    "total": 22543,
+    "clean_correct": 18628,
+    "robust_correct_k0": 18106,
+    "robust_correct_k1": 0,
+    "formula": "A_full(K) = robust_correct[K] / total; A_cond(K) = robust_correct[K] / clean_correct"
+  }
+}

@@ -35,7 +35,10 @@ C5 (statistical) validates C3 across seeds
 - **ADRs**: `docs/adr/`
 - **Evaluation diagnostics & audits**: `docs/postmortem/` (K=0/K=1 evaluator
   audit, diagnostic-vs-archived reconciliation, CICIDS2017 threat-model
-  clarification, coverage/representation-sensitivity audits, and the
-  exhaustive-vs-snapped canonical comparison across 75 checkpoints)
+  clarification, coverage/representation-sensitivity audits, the
+  exhaustive-vs-snapped canonical comparison across 75 checkpoints, and the
+  post-freeze NF-ToN-IoT / external-works replication addendum — see
+  `replication/README.md`; that addendum is non-canonical and supports no
+  claim above)
 - **Provenance**: `PROVENANCE.md`
 - **Limitations**: `LIMITATIONS.md`

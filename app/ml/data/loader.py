@@ -10,6 +10,10 @@ def get_config(dataset_name):
         import app.ml.data.cicids2017_config as config
     elif dataset_name in ('unsw-nb15', 'unsw_nb15'):
         import app.ml.data.unsw_nb15_config as config
+    elif dataset_name == 'nf_ton_iot':
+        import app.ml.data.nf_ton_iot_config as config
+    elif dataset_name == 'nf_ton_iot_oh':
+        import app.ml.data.nf_ton_iot_oh_config as config
     else:
         raise ValueError(f"Unknown dataset: {dataset_name}")
     return config

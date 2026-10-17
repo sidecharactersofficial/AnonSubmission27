@@ -1,0 +1,64 @@
+{
+  "title": "Macro-Group Attack vs K=2 Evaluation on UNSW-NB15",
+  "hypothesis": "K=1 underestimates because derived groups (state, is_sm, is_ftp) are causally coupled to proto/service, so macro-group K=1 would reveal additional vulnerability.",
+  "result": "REFUTED \u2014 macro-group K=1 gives identical results to standard K=1 (96.0% = 96.0%)",
+  "actual_finding": "K=2 vulnerability comes from CROSS-macro-group flips (service+state), not causal coupling within macro-groups.",
+  "evidence": {
+    "method": "RSC",
+    "seed": 42,
+    "checkpoint": "models/unified/model_adv_rsc_unsw_nb15_seed42.pth",
+    "subset_size": 25,
+    "clean_correct": 25,
+    "K0": {
+      "count": 25,
+      "pct": 100.0
+    },
+    "K1_standard": {
+      "count": 24,
+      "pct": 96.0,
+      "states": 37
+    },
+    "K2_all_pairs": {
+      "count": 20,
+      "pct": 80.0,
+      "states": 508,
+      "additional_breaks": 4
+    },
+    "K1_macro_group": {
+      "count": 24,
+      "pct": 96.0,
+      "states": 329,
+      "additional_breaks": 0
+    }
+  },
+  "k2_break_analysis": {
+    "description": "4 samples that survived K=1 but broke at K=2:",
+    "sample_15": {
+      "flips": "service: 2\u21923, state: 3\u21928"
+    },
+    "sample_21": {
+      "flips": "service: 2\u21923, state: 3\u21921"
+    },
+    "sample_22": {
+      "flips": "service: 2\u21927, state: 0\u21928"
+    },
+    "sample_23": {
+      "flips": "service: 2\u21923, state: 3\u21921"
+    },
+    "note": "All involve CROSS-macro-group flips: service (Macro-B) + state (Macro-A)"
+  },
+  "group_flip_frequency_at_K2": {
+    "proto (Macro-A)": 17,
+    "service (Macro-B)": 22,
+    "state (Macro-A)": 11,
+    "is_sm_ips_ports (Macro-A)": 0,
+    "is_ftp_login (Macro-B)": 0,
+    "note": "is_sm_ips_ports and is_ftp_login never flipped at K=2 \u2014 derived groups are NOT the vulnerability drivers"
+  },
+  "conclusion": {
+    "macro_group_hypothesis": "REFUTED",
+    "actual_mechanism": "Model relies on multiple independent categorical features. K=1 perturbation of one group is insufficient; K=2 perturbation of two independent groups (e.g., service+state) collapses robustness.",
+    "implication": "The K=1 threat model is incomplete for UNSW-NB15 not because of causal coupling, but because it only explores 1 of 5 independent feature groups. The model is genuinely robust to single-feature attacks but vulnerable to multi-feature attacks.",
+    "recommendation": "For UNSW-NB15, report K=1 as a lower bound on vulnerability. K=2 evaluation (computationally expensive) reveals the true vulnerability."
+  }
+}

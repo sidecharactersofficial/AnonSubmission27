@@ -1,0 +1,26 @@
+{
+ "checkpoint": "models/unified/model_adv_rsc_cicids2017.pth",
+ "checkpoint_sha256": "c507556fa21146bb562805e833ae57a4b703fc511987145ae784d28c46582b36",
+ "epsilon": 0.15,
+ "alpha_cont": 0.01,
+ "pgd_steps": 40,
+ "protocol": "linf-only-pgd + exhaustive-k1 (ADR-001)",
+ "dataset": "cicids2017",
+ "linf_only_pgd": {
+  "clean_correct": 558597,
+  "robust_correct": 520963,
+  "total": 623869,
+  "clean_acc": 89.53754714531415,
+  "robust_acc": 83.50519099362205
+ },
+ "exhaustive_k1": {
+  "clean_correct": 558597,
+  "survive_k0": 521093,
+  "survive_k1": 108595,
+  "total": 623869,
+  "clean_acc_pct_of_full": 89.53754714531415,
+  "k0_robust_acc_pct_of_clean_correct": 93.28603626585893,
+  "k1_robust_acc_pct_of_clean_correct": 19.440670107429863,
+  "k1_robust_acc_pct_of_full": 17.406699162805012
+ }
+}

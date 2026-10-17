@@ -18,6 +18,7 @@ to inspect the repository linearly.
 | Historical methodology changes | `PROVENANCE.md` |
 | Evaluation diagnostics & audits | `docs/postmortem/` |
 | Known limitations | `LIMITATIONS.md` |
+| Post-freeze replication addendum | `replication/README.md` |
 | Claim-to-evidence mapping | `CLAIM_MAP.md` |
 | Review verification checklist | `REVIEW_CHECKLIST.md` |
 | Fast verification | `VERIFY.md` |

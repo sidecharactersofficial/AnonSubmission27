@@ -60,6 +60,10 @@ shipped checkpoints, scripts, and result files.
 ├── dataset_links.md              Dataset acquisition and integrity anchors
 ├── app/                          Shared library: models, attacks, loaders, training
 ├── canonical/                    Final evaluators supporting reported conclusions
+├── replication/                  Post-freeze replication addendum (non-canonical)
+│   ├── nf_ton_iot/               NF-ToN-IoT dataset prep and training scripts
+│   ├── external_works/           CAA+MOEVA and Illusion/Takedown replication
+│   └── results/                  Archived replication outputs (39 JSONs)
 ├── diagnostics/                  Historical implementations for provenance
 ├── verification/                 Integrity checks and fresh-vs-archive comparison
 ├── models/                       Trained checkpoints (SHA-256 pinned)
@@ -83,6 +87,7 @@ shipped checkpoints, scripts, and result files.
     │   ├── 005-audits-1-3-feature-category-semantic-coverage.md
     │   ├── 006-audit-4-representation-sensitivity.md
     │   ├── 007-exh-vs-snap-canonical-comparison.md
+    │   ├── 008-nf-ton-iot-and-external-works-replication.md
     │   └── README.md
     └── adr/                      Architectural Decision Records
         ├── ADR-001-canonical-exhaustive-mixed-norm-evaluation.md
