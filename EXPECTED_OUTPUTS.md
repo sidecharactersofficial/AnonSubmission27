@@ -155,3 +155,17 @@ python3 canonical/trace_logit_reversal_hardened.py
 **Expected properties**:
 - Byte-identical to archive
 - Confirms logit margins flip under exhaustive K=1 categorical state changes
+
+## Replication Addendum (replication/ — informational only)
+
+Archived outputs under `replication/results/` (39 JSON files) were produced
+after the artifact freeze and are treated as provenance records, not
+reproduction targets. Two illustrative entries:
+
+- `replication/results/eval_lite_nf_ton_iot.json` — native encoding:
+  K1 robust (% clean-correct) 87.5 == K0 87.5
+- `replication/results/eval_lite_nf_ton_iot_oh.json` — one-hot encoding:
+  K1 0.0 vs K0 83.2 (encoding-dependent K=1 measurement)
+
+No `make` target regenerates these; scripts live under `replication/` and
+are not wired into the canonical pipeline.

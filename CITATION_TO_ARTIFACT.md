@@ -26,6 +26,16 @@ Individual components may be cited separately:
 
 ## Versioning Policy
 
-This artifact follows the paper's review cycle. Code and data will not
-change during the review period. Post-acceptance updates will be released
-as new tags.
+This artifact follows the paper's review cycle. Checkpoint pins and
+evaluator code supporting claims C1-C8 will not change during the review
+period.
+Post-acceptance updates will be released as new tags.
+
+**Addendum note (October 2026)**: a post-freeze non-canonical replication
+extension (`replication/`, NF-ToN-IoT preparation/training and independent
+CAA+MOEVA / Illusion/Takedown attack replication) and reviewer-facing
+documentation updates (`docs/postmortem/`, verification records) were added
+after the release. None of the canonical evaluator code or datasets backing
+claims C1-C8 changed; `make verify` (104/104 checkpoint pins) still passes
+against the shipped manifest. If you cite a pinned scope, cite the canonical
+manifest tree; the addendum is separately descoped in `replication/README.md`.

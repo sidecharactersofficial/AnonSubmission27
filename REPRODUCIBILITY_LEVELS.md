@@ -57,3 +57,7 @@ verified by regenerating statistics from the archive.
 - R1 and R2 results can be verified with `make verify` and `make smoke`.
 - R4 verification requires reading the canonical results and confirming
   they support the paper's tables and figures.
+- The `replication/` post-freeze addendum has **no assigned level**. It is
+  provenance material only (categorically below R4-archival: no manifests,
+  no pre-registered tolerances, no reproduction targets), and no paper claim
+  depends on it. See `replication/README.md`.

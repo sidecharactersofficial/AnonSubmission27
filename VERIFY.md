@@ -105,3 +105,10 @@ python3 verification/compare_exh_fresh.py --attack pgd40 --dataset nsl-kdd
   ~10 min/model, CICIDS2017 ~6 h/model, UNSW-NB15 ~9-10 h/model.
 - **Dataset reconstruction** for CICIDS2017/UNSW-NB15 from raw sources.
   These require manual preprocessing documented in `dataset_links.md`.
+- **Anything under `replication/`**. The post-freeze replication addendum
+  (NF-ToN-IoT, CAA+MOEVA, Illusion/Takedown — see `replication/README.md` and
+  `docs/postmortem/008`) is outside the verification surface: `make verify`
+  checks the 104 canonical checkpoints only, and `make smoke` exercises no
+  addendum code. The two supplementary checkpoints in
+  `models/unified/model_adv_lite_nf_ton_iot*.pth` are intentionally not in
+  the canonical manifest.

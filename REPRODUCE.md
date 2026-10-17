@@ -164,3 +164,14 @@ make clean
 
 Removes fresh outputs (`*.fresh.json`, `*.repro.json`, `results_fresh/`)
 but preserves canonical archives.
+
+## Replication Addendum (optional)
+
+The `replication/` directory is a post-freeze addendum outside the Makefile
+pipeline: dataset prep and training for NF-ToN-IoT
+(`replication/nf_ton_iot/`), and independent attack replication — CAA+MOEVA,
+Illusion/Takedown (`replication/external_works/`). Its archived outputs are
+in `replication/results/` and narrated in
+`docs/postmortem/008-nf-ton-iot-and-external-works-replication.md`. Running
+it is optional and reproduces none of the paper's tables; it is provided for
+provenance.

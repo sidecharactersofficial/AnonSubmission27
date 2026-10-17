@@ -106,3 +106,22 @@ See `docs/adr/` for the full ADR history:
 - ADR-002: Multi-seed statistical re-evaluation
 - ADR-003: Independent attack validation
 - ADR-004: Canonical vs fresh reproduction outputs
+
+## Post-Freeze Replication Addendum (October 2026)
+
+Non-canonical, post-freeze work retained for provenance (not for claims):
+
+- **NF-ToN-IoT dataset extension** — `replication/nf_ton_iot/` preparation
+  and training scripts plus two supplementary checkpoints under
+  `models/unified/`. Narrative and results:
+  `docs/postmortem/008-nf-ton-iot-and-external-works-replication.md`.
+- **Independent attack replication** — `replication/external_works/`
+  (CAA + MOEVA; Illusion/Takedown trigger attacks) with archived outputs
+  under `replication/results/`.
+- **Verification records** — scripts and archived phase results under
+  `verification/` backfilling the EXH vs SNAP comparison in
+  `docs/postmortem/007-exh-vs-snap-canonical-comparison.md`.
+
+None of this is exercised by `make verify` / `make smoke`, none of these
+checkpoints appear in `manifest/checkpoint_sha256.json`, and none support
+claims C1-C8.
