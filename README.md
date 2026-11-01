@@ -24,6 +24,8 @@ shipped checkpoints, scripts, and result files.
 
 | If you are reviewing... | Start here |
 |---|---|
+| Formal mathematical proofs (Lean 4) | `leanproofs/README.md` |
+| Step-by-step mathematical audit | `leanproofs/MATH_AUDIT_REPORT.md` |
 | Mixed-norm threat model | `docs/threat_model.md` |
 | Canonical evaluation pipeline | `canonical/eval_deepfool_k1.py` |
 | Mixed-norm enumeration | `canonical/eval_mixed_norm.py` |
@@ -53,6 +55,12 @@ shipped checkpoints, scripts, and result files.
 ├── CITATION_TO_ARTIFACT.md       Versioning and citation information
 ├── Makefile                      Reproducibility pipeline
 ├── requirements.txt              Pinned Python environment
+├── leanproofs/                   Formal verification in Lean 4 and audit test suite
+│   ├── BlackiceProofs/Basic.lean Formal Lean 4 proofs (Propositions 1-4, Theorem 1, Eq. 6)
+│   ├── MATH_AUDIT_REPORT.md      Line-by-line step-by-step mathematical audit
+│   ├── verify_math.py            Automated test suite verifying algebraic bounds
+│   ├── lakefile.toml             Lake project definition (Lean 4)
+│   └── README.md                 Lean 4 compilation and verification guide
 ├── data_scripts/                  Dataset download and preprocessing scripts
 │   ├── download_data.py           NSL-KDD
 │   ├── download_cicids2017.py     CICIDS2017
@@ -103,6 +111,8 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 . .venv/bin/activate
 make setup          # fetches all datasets (NSL-KDD, CICIDS2017, UNSW-NB15)
 make verify         # confirm every checkpoint matches its pinned SHA-256
+make verify-math    # verify all 6 mathematical theorems with Python test suite (<1s)
+make verify-lean    # formal machine-checked verification via Lean 4
 make smoke          # fast end-to-end check (~2 min)
 make reproduce-table3
 ...
@@ -129,6 +139,7 @@ cited are from the reference machine: 6 GB mobile GPU, 10-core CPU, 11 GB RAM.
 | Quantity                                        | Behavior |
 |-------------------------------------------------|----------|
 | checkpoint SHA-256 (all 104 files)              | exact (manifest) |
+| mathematical soundness & bounds (all 6 results) | exact / machine-checked (`verify_math.py`, `lake build`) |
 | mixed-norm K=0/1/2 counts (NSL-KDD)             | exact (`ALL CHECKS PASS`) |
 | certified CROWN/IBP rates (27 checkpoints)      | byte-identical |
 | JSMA vs exhaustive-image comparison             | byte-identical |

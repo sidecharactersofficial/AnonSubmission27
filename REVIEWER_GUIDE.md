@@ -9,6 +9,8 @@ to inspect the repository linearly.
 
 | If you are reviewing... | Start here |
 |---|---|
+| Formal mathematical proofs (Lean 4) | `leanproofs/README.md` |
+| Step-by-step mathematical audit | `leanproofs/MATH_AUDIT_REPORT.md` |
 | Mixed-norm threat model | `docs/threat_model.md` |
 | Canonical evaluation pipeline | `canonical/eval_deepfool_k1.py` |
 | Mixed-norm enumeration | `canonical/eval_mixed_norm.py` |
@@ -25,6 +27,11 @@ to inspect the repository linearly.
 | Full reproduction | `REPRODUCE.md` |
 
 ## Suggested Review Paths
+
+### 5-minute mathematical soundness check
+1. `leanproofs/MATH_AUDIT_REPORT.md` — inspect step-by-step mathematical proofs for Propositions 1–4, Theorem 1, and Eq. (6)
+2. Run `make verify-math` (or `python3 leanproofs/verify_math.py`) — automated numerical and algebraic verification of all 6 results
+3. Run `make verify-lean` (or `cd leanproofs && lake build`) — machine-checked Lean 4 formalization
 
 ### 15-minute scientific sanity check
 1. `CLAIM_MAP.md` — understand the claim structure

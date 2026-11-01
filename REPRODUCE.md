@@ -51,6 +51,26 @@ Expected runtime: ~50 min per dataset on CUDA, longer on CPU.
 
 ## Experiment Reproduction
 
+### Mathematical Foundations & Formal Proofs (Lean 4)
+
+To verify the mathematical proofs and theoretical derivations established in the paper:
+
+```bash
+# Fast test suite (<1s)
+make verify-math
+# or
+python3 leanproofs/verify_math.py
+
+# Full formal machine-checked verification via Lake
+make verify-lean
+# or
+cd leanproofs && lake build && ./.lake/build/bin/blackice_proofs
+```
+
+Expected output:
+- `verify_math.py`: `ALL MATHEMATICAL PROOFS AND PROPOSITIONS SUCCESSFULLY VERIFIED!`
+- Lean 4: `Build completed successfully (8 jobs).`
+
 ### Table 3: Faithful AdvGuard Diagnostic
 
 ```bash

@@ -67,16 +67,17 @@ Findings are validated using:
 - **CROWN/IBP certified bounds** — backward/forward bound propagation
 - **C&W L2 attack** — Carlini-Wagner optimization in mixed-norm setting
 - **JSMA comparison** — group-level saliency map attack (for divergence analysis only)
+- **Formal Machine-Checked Proofs (Lean 4)** — formal verification of Propositions 1–4, Theorem 1, and Candidate Complexity Eq. (6) in `leanproofs/`
 
 These independent methods confirm that exhaustive PGD-40 findings are not
 attack-specific artifacts.
 
 ## Soundness Checks
 
-CROWN vs IBP includes a soundness check:
+- **Empirical bounds**: CROWN vs IBP includes a soundness check:
 ```
 assert crown_k1 <= ibp_k1 + 1e-6
 ```
-
 This ensures backward bounds do not exceed forward bounds, which would
 indicate an implementation bug.
+- **Formal mathematical soundness**: Every theorem and proposition is machine-checked in Lean 4 without external dependencies (`make verify-lean` and `make verify-math`).

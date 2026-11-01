@@ -19,7 +19,7 @@ NSL_SEEDS       := 42 43 44
 CICIDS_SEEDS    := 42 43 44 45 46 47 48 49 50 51 52 53 54
 UNSW_SEEDS      := 42 43 44 46 47 48 49 50 51
 
-.PHONY: help setup verify \
+.PHONY: help setup verify verify-math verify-lean \
         reproduce-table3 reproduce-table-mixednorm \
         reproduce-multiseed-nslkdd reproduce-multiseed-cicids reproduce-multiseed-unsw \
         reproduce-certified reproduce-scalability reproduce-jsma \
@@ -30,6 +30,8 @@ help:
 	@echo "Targets:"
 	@echo "  make setup                          create venv, pin deps, fetch NSL-KDD"
 	@echo "  make verify                         checkpoint SHA-256 manifest check"
+	@echo "  make verify-math                    verify all 6 theorems with Python test suite"
+	@echo "  make verify-lean                    formal machine-checked verification via Lean 4"
 	@echo "  make reproduce-table3               Section III faithful diagnostic (Table 3, AdvGuard)"
 	@echo "  make reproduce-table-mixednorm      mixed-norm K=0/1/2 collapse (Tab.MixedNorm, NSL-KDD)"
 	@echo "  make reproduce-multiseed-nslkdd     EXH K=1 pgd40 sweep, NSL-KDD, 9 models"
@@ -52,6 +54,13 @@ setup:
 
 verify:
 	$(PY) verification/verify_manifest.py
+
+# --- Mathematical verification (Lean 4 & Python) ---------------------------
+verify-math:
+	$(PY) leanproofs/verify_math.py
+
+verify-lean:
+	cd leanproofs && lake build && ./.lake/build/bin/blackice_proofs
 
 # --- Table 3 (AdvGuard faithful diagnostic) ------------------------------
 # ~45 s (CUDA) / ~4 min (CPU). NOTE: faithful protocol uses an UNSEEDED
@@ -130,6 +139,7 @@ reproduce-canonical-table:
 # --- Smoke: fastest coverage of all verification machinery ------------------
 smoke:
 	$(PY) verification/verify_manifest.py
+	$(PY) leanproofs/verify_math.py
 	$(PY) canonical/run_paper_mixednorm.py --check
 	$(PY) canonical/trace_logit_reversal_hardened.py
 	$(PY) canonical/consolidated_canonical_table.py

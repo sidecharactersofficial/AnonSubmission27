@@ -1,0 +1,28 @@
+{
+  "experiment_id": "E-C9-FORMAL-LEAN-PROOFS-01",
+  "claim": "C9",
+  "description": "Formal machine-checked proofs and mathematical verification of all theoretical foundations in Lean 4",
+  "lean_version": "v4.35.0",
+  "lake_package": "blackice_proofs",
+  "source_files": [
+    "leanproofs/BlackiceProofs/Basic.lean",
+    "leanproofs/BlackiceProofs.lean",
+    "leanproofs/Main.lean",
+    "leanproofs/MATH_AUDIT_REPORT.md",
+    "leanproofs/verify_math.py"
+  ],
+  "verified_theorems": {
+    "Proposition 1": "Structural L_inf insufficiency & simplex metric separation (prop1_coordinate_separation, prop1_euclidean_distance_algebra, prop1_canonical_separation, prop1_step_threshold)",
+    "Proposition 2": "Monotonicity and dominance of EXH (prop2_supremum_monotone, prop2_exh_dominates_heuristic, prop2_robust_accuracy_inequality)",
+    "Theorem 1": "First-order Taylor misalignment of SNAP & rank inversion (thm1_taylor_decomposition, thm1_snap_masking, thm1_rank_inversion)",
+    "Proposition 3": "Margin-bounded survival and multi-group K-scaling (prop3_margin_survival, prop3_margin_failure)",
+    "Proposition 4": "Soundness of mixed-norm certification and low-m RanMASK vacuity (prop4_ranmask_overlap_algebra, prop4_ranmask_delta_ge_half, prop4_ranmask_certification_vacuity, prop4_sandwich_relation)",
+    "Equation (6)": "Exhaustive candidate state complexity counting (distinct_k1, unpruned_k1, unsw_nb15_k1_exact, unsw_nb15_k2_unpruned_exact, unsw_nb15_k2_distinct_exact)"
+  },
+  "expected_properties": {
+    "lake_build": "Build completed successfully (8 jobs), 0 errors, 0 warnings",
+    "verify_math_py": "ALL MATHEMATICAL PROOFS AND PROPOSITIONS SUCCESSFULLY VERIFIED (6/6 suites pass)"
+  },
+  "reproducibility_level": "R1",
+  "script": "leanproofs/verify_math.py"
+}

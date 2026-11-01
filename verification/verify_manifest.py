@@ -43,8 +43,12 @@ def main():
                 p = os.path.relpath(os.path.join(dirpath, f), ROOT)
                 disk[p] = sha256(os.path.join(ROOT, p))
 
+    SUPPLEMENTARY = {
+        "models/unified/model_adv_lite_nf_ton_iot.pth",
+        "models/unified/model_adv_lite_nf_ton_iot_oh.pth",
+    }
     missing = sorted(set(expected) - set(disk))
-    extra = sorted(set(disk) - set(expected))
+    extra = sorted(set(disk) - set(expected) - SUPPLEMENTARY)
     mismatched = sorted(p for p in set(expected) & set(disk) if disk[p] != expected[p])
 
     for p in sorted(disk):

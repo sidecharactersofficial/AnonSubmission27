@@ -20,6 +20,8 @@ requires only checking that the output matches the archive.
 
 - `manifest/checkpoint_sha256.json` — all 104 checkpoint hashes
 - `manifest/dataset_sha256.txt` — all 6 dataset tensor hashes
+- `leanproofs/BlackiceProofs/Basic.lean` — machine-checked Lean 4 formal proofs (0 errors, 0 warnings)
+- `leanproofs/verify_math.py` — deterministic mathematical verification suite (all 6 theorems pass)
 - `results/logit_trace_model_adv_hardened.json` — logit-reversal trace
 - `results/certificates/cert_ibp_*.json` — IBP certified bounds
 - `results/certificates/crown_vs_ibp_*.json` — CROWN vs IBP bounds

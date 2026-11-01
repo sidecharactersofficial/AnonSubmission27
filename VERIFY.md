@@ -25,7 +25,29 @@ python3 verification/verify_manifest.py
 
 Expected output: `verify_manifest: PASS (104/104 checkpoints)`
 
-## Step 2: Run Smoke Tests
+## Step 2: Verify Formal Mathematical Proofs (Lean 4 & Python)
+
+Confirm that all theoretical foundations, bounds, and complexity counts established in the paper are sound and machine-checked:
+
+```bash
+# 1. Automated Python numerical verification suite (<1s)
+make verify-math
+# or
+python3 leanproofs/verify_math.py
+
+# 2. Formal machine-checked proofs in Lean 4
+make verify-lean
+# or
+cd leanproofs && lake build && ./.lake/build/bin/blackice_proofs
+```
+
+Expected output:
+- `ALL MATHEMATICAL PROOFS AND PROPOSITIONS SUCCESSFULLY VERIFIED!` (6/6 test suites pass)
+- Lean 4: `Build completed successfully (8 jobs).` All 6 core theorems/propositions verified.
+
+Detailed step-by-step mathematical expansions, Taylor remainders, and hypergeometric derivations are documented in `leanproofs/MATH_AUDIT_REPORT.md`.
+
+## Step 3: Run Smoke Tests
 
 Run the fastest verification targets to confirm the evaluation pipeline
 executes correctly:
@@ -36,13 +58,14 @@ make smoke
 
 This runs:
 1. Checkpoint manifest verification
-2. Mixed-norm canonical evaluation (NSL-KDD, all 4 models)
-3. Logit-reversal trace
-4. Canonical table aggregation
+2. Mathematical verification test suite (all 6 theorems)
+3. Mixed-norm canonical evaluation (NSL-KDD, all 4 models)
+4. Logit-reversal trace
+5. Canonical table aggregation
 
 Expected runtime: ~2 minutes on CPU.
 
-## Step 3: Inspect Canonical Results
+## Step 4: Inspect Canonical Results
 
 Verify that canonical results are present and consistent:
 
@@ -55,7 +78,7 @@ ls results/section3/
 ls results/logit_trace_model_adv_hardened.json
 ```
 
-## Step 4: Regenerate Statistics
+## Step 5: Regenerate Statistics
 
 Regenerate the aggregated canonical table from archived results:
 
@@ -66,7 +89,7 @@ python3 canonical/consolidated_canonical_table.py
 Expected output: Per-seed and mean±std tables for all 3 datasets × 3 methods
 × canonical seeds. Values should match paper tables.
 
-## Step 5: Verify Paper Tables (Time-Budgeted)
+## Step 6: Verify Paper Tables (Time-Budgeted)
 
 For reviewers with more time, verify individual experiments:
 
@@ -84,7 +107,7 @@ python3 canonical/trace_logit_reversal_hardened.py
 # Expected: byte-identical to archive
 ```
 
-## Step 6: Compare Fresh vs Canonical (Optional)
+## Step 7: Compare Fresh vs Canonical (Optional)
 
 If you run fresh evaluations, compare against the canonical archive:
 

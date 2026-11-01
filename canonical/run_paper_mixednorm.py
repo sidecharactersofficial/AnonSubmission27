@@ -44,7 +44,9 @@ TOL = 5  # absolute count tolerance when asserting equality to archived files
 
 
 def load_eval_mixed_norm():
-    path = os.path.join(ROOT, "scripts", "eval_mixed_norm.py")
+    path = os.path.join(ROOT, "canonical", "eval_mixed_norm.py")
+    if not os.path.exists(path):
+        path = os.path.join(ROOT, "scripts", "eval_mixed_norm.py")
     spec = importlib.util.spec_from_file_location("eval_mixed_norm", path)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)

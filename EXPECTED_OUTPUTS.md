@@ -20,6 +20,58 @@ verify_manifest: PASS (104/104 checkpoints)
 - All 104 `.pth` files under `models/` and `models/unified/` are present
 - SHA-256 hashes match `manifest/checkpoint_sha256.json`
 
+## Mathematical Verification (Lean 4 & Python Suite)
+
+```bash
+make verify-math
+```
+
+**Expected runtime**: <1 s
+
+**Expected output**:
+```
+================================================================================
+Running Full Mathematical Soundness Test Suite for BlackIce
+================================================================================
+[1/6] Verifying Proposition 1 (Structural L_inf Insufficiency)...
+  -> Proposition 1: PASSED (Coordinate separation, Euclidean metric, and step thresholds verified).
+[2/6] Verifying Proposition 2 (Monotonicity and Dominance of EXH)...
+  -> Proposition 2: PASSED (Nested inclusion, mask restriction, and loss dominance verified).
+[3/6] Verifying Theorem 1 (Taylor Misalignment of SNAP & Rank Inversion)...
+  -> Theorem 1: PASSED (Exact Taylor remainder decomposition and SNAP blindness verified).
+[4/6] Verifying Proposition 3 (Margin-Bounded Survival & Multi-Group Scaling)...
+  -> Proposition 3: PASSED (Margin condition for K=1 survival and K=2 exhaustion verified).
+[5/6] Verifying Proposition 4 (RanMASK Vacuity & Sandwich Bounds)...
+  -> Proposition 4: PASSED (RanMASK hypergeometric overlap delta=k_x/m and m<=2 vacuity theorem verified).
+[6/6] Verifying Equation (6) (State Complexity Derivation)...
+  -> Equation (6): PASSED (Combinatorial counting and UNSW-NB15 benchmark verification verified).
+================================================================================
+ALL MATHEMATICAL PROOFS AND PROPOSITIONS SUCCESSFULLY VERIFIED!
+================================================================================
+```
+
+```bash
+make verify-lean
+```
+
+**Expected runtime**: ~2-3 s
+
+**Expected output**:
+```
+Build completed successfully (8 jobs).
+=================================================================
+  BlackIce: Machine-Checked Formal Verification in Lean 4
+=================================================================
+All 6 core theorems, propositions, and complexity bounds verified:
+  [x] Proposition 1: Structural L_inf Insufficiency & Coordinate Separation
+  [x] Proposition 2: Monotonicity & Dominance of Exact Fiber Enumeration
+  [x] Theorem 1: First-Order Taylor Misalignment of SNAP & Rank Inversion
+  [x] Proposition 3: Margin-Bounded Survival & Multi-Group K-Scaling
+  [x] Proposition 4: Soundness of Mixed-Norm Certification & Low-m Vacuity
+  [x] Equation (6): Discrete Candidate State Complexity Counting
+=================================================================
+```
+
 ## Smoke Tests
 
 ```bash

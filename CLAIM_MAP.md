@@ -13,23 +13,26 @@ links a paper claim to its evidence, generating script, and output file.
 | C6 | Findings are not attack-specific | `experiment_manifests/E-C6-CERTIFIED-BOUNDS.json` | CROWN/IBP certified bounds align with empirical PGD-40 exhaustive masks; C&W L2 and DeepFool L2 agree within tolerance | `canonical/run_crown_vs_ibp.py`, `app/ml/attacks/cw.py` | `results/certificates/cert_ibp_*.json`, `results/foolbox/exh_k1_deepfool_*.json` |
 | C7 | Legacy FGSM-hardened models exhibit logit-reversal behavior | `experiment_manifests/E-C7-LOGIT-TRACE.json` | Per-sample logit margins flip under exhaustive K=1 categorical state changes | `canonical/trace_logit_reversal_hardened.py` | `results/logit_trace_model_adv_hardened.json` |
 | C8 | Exhaustive evaluation is tractable for evaluated state spaces | `experiment_manifests/E-C8-SCALABILITY.json` | Wall-clock timing: K=1 (42 states) 0.0155 s/state, K=2 (667 states) 0.118 s/state on reference GPU | `canonical/eval_scalability.py` | `results/scalability_unsw_nb15_*.json` |
+| C9 | Mathematical foundations, metric bounds, and remainder decompositions are formally sound | `experiment_manifests/E-C9-FORMAL-LEAN-PROOFS.json` | Machine-checked formal proofs in Lean 4 verifying Propositions 1–4, Theorem 1, and Candidate Complexity Eq. (6) with 0 errors | `leanproofs/verify_math.py`, `cd leanproofs && lake build` | `leanproofs/MATH_AUDIT_REPORT.md`, `leanproofs/BlackiceProofs/Basic.lean` |
 
 ## Claim Dependencies
 
 ```
-C1 (faithful diagnostic)
-    └── identifies retracted result
-        └── motivates C2 (exhaustive enumeration)
-            └── enables C3 (accurate measurement)
-                ├── validated by C4 (JSMA divergence)
-                ├── validated by C6 (independent attacks)
-                ├── confirmed by C7 (logit reversal)
-                └── scaled by C8 (tractability)
+C9 (formal Lean 4 mathematical foundations)
+    └── proves structural L_inf insufficiency & SNAP gradient blindness
+        └── explains C1 (faithful diagnostic & illusion of security)
+            └── motivates C2 (exhaustive mixed-norm enumeration)
+                └── enables C3 (accurate measurement)
+                    ├── validated by C4 (JSMA divergence)
+                    ├── validated by C6 (independent certified & discrete attacks)
+                    ├── confirmed by C7 (logit reversal)
+                    └── scaled by C8 (tractability & complexity)
 C5 (statistical) validates C3 across seeds
 ```
 
 ## Cross-References
 
+- **Formal Proofs**: `leanproofs/` (`BlackiceProofs/Basic.lean`, `MATH_AUDIT_REPORT.md`, `README.md`)
 - **Threat model**: `docs/threat_model.md`
 - **Methodology**: `docs/methodology.md`
 - **ADRs**: `docs/adr/`

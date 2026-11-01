@@ -52,6 +52,17 @@ to a claim or reproducibility requirement.
 - [ ] K=1 timing ≈ 0.0155 s/state on reference GPU
 - [ ] K=2 timing ≈ 0.118 s/state on reference GPU
 
+## Claim C9 — Mathematical Foundations & Machine-Checked Lean 4 Proofs
+- [ ] `make verify-math` (or `python3 leanproofs/verify_math.py`) passes all 6 mathematical suites
+- [ ] `make verify-lean` (or `cd leanproofs && lake build`) compiles cleanly with 0 errors and 0 warnings
+- [ ] Proposition 1 proved: Coordinate separation $x_{c^*} - x_c \ge 1-2\epsilon > 0$, Euclidean distance difference $2(x_{c^*} - x_c)$, and unprojected sign-PGD step threshold
+- [ ] Proposition 2 proved: Monotonicity under candidate set inclusion and guaranteed dominance of EXH over heuristic discrete attacks
+- [ ] Theorem 1 proved: Discrete loss decomposition $\Delta J = \Delta^{(1)} + R$, SNAP blindness when local gradient is non-positive, and rank inversion condition
+- [ ] Proposition 3 proved: Margin-bounded survival when clean margin exceeds single-group bound + continuous budget
+- [ ] Proposition 4 proved: RanMASK hypergeometric overlap $\Delta = k_x/m \ge 0.5$ for $m \le 2$, proving certification is vacuous ($p \le 0.5$)
+- [ ] Equation (6) verified: Exact combinatorial candidate counting ($K=1$: 37 states, 42 evaluations; $K=2$: 508 states, 667 evaluations on UNSW-NB15)
+- [ ] Step-by-step mathematical audit report verified (`leanproofs/MATH_AUDIT_REPORT.md`)
+
 ## Provenance
 - [ ] `PROVENANCE.md` documents methodological evolution
 - [ ] `diagnostics/` contains superseded implementations

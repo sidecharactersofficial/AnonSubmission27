@@ -1,0 +1,10 @@
+name = "blackice_proofs"
+version = "0.1.0"
+defaultTargets = ["blackice_proofs"]
+
+[[lean_lib]]
+name = "BlackiceProofs"
+
+[[lean_exe]]
+name = "blackice_proofs"
+root = "Main"

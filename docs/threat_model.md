@@ -48,6 +48,11 @@ Exhaustive enumeration eliminates these failure modes by evaluating every
 valid categorical configuration within budget $K$. The continuous inner
 optimization remains gradient-based, but the discrete outer loop is exact.
 
+This is backed by machine-checked formal proofs in `leanproofs/`:
+- **Proposition 1** proves structural $L_\infty$ insufficiency: for any continuous perturbation $\epsilon < 0.5$, coordinate and Euclidean metrics preserve the clean vertex identically under snapping or $\arg\max$.
+- **Proposition 2** proves monotonicity and dominance of EXH over heuristic discrete attacks.
+- **Theorem 1** proves first-order Taylor misalignment of SNAP due to path-integral curvature remainders.
+
 ## Datasets
 
 All datasets are tabular intrusion detection benchmarks with mixed continuous
