@@ -1,0 +1,21 @@
+{
+ "attack": "caa",
+ "official_impl": "serval-uni-lu/tabularbench @ HEAD",
+ "checkpoint": "models/unified/model_adv_lite_nf_ton_iot.pth",
+ "checkpoint_sha256": "596f0d0033a2842b9b72b306f7bad5f68e8262a2ddb4220ac99512f8c0beb019",
+ "dataset": "nf_ton_iot",
+ "epsilon": 0.15,
+ "norm": "Linf",
+ "capgd_steps": 10,
+ "n_gen": 100,
+ "attacked_total": 66,
+ "population_max": 0,
+ "clean_correct": 66,
+ "total_evaluated": 100,
+ "known_total": 200000,
+ "limited_to_samples": 100,
+ "robust_under_attack": 61,
+ "robust_acc_pct_of_clean_correct": 92.42424242424242,
+ "robust_acc_pct_of_full": 61.0,
+ "wall_seconds": 512.7621829509735
+}

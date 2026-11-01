@@ -1,0 +1,281 @@
+{
+  "metadata": {
+    "title": "Consolidated Full-Dataset Benchmark across Four Datasets and Defense Paradigms",
+    "threat_model": {
+      "C1": "Editability Mask e in {0, 1}^m",
+      "C2": "One-Hot Simplex Valid Vertices Delta_0^{|G_i|}",
+      "C3": "Co-Occurrence Infeasibility Masking C_i^{jk} = infty",
+      "C4": "Categorical Transition Budget sum 1/2 ||x'_{G_i} - x_{G_i}||_1 <= K"
+    },
+    "parameters": {
+      "epsilon": 0.15,
+      "alpha_cont": 0.01,
+      "steps": 40
+    },
+    "device": "cuda",
+    "timestamp": "2026-10-28T07:20:09Z"
+  },
+  "datasets": {
+    "NSL-KDD": {
+      "file": "./data/nsl-kdd-test.csv",
+      "file_sha256": "e0e48f5bcfce97e9599a2d776562d270e2e02f4dbdc2beb15db6c9eb0d9bfcf3",
+      "n_total": 22543,
+      "defenses": {
+        "Standard L_inf-AT": {
+          "checkpoint": "models/model.pth",
+          "checkpoint_sha256": "8cbcb9d5c9db208bf290fa525abd8939e89232894d33f46d30c6e4d6e39d6607",
+          "metrics": {
+            "clean": 80.51,
+            "snap_k0": 76.4,
+            "cat_pgd_k1": 0.0,
+            "moeva2_k1": 71.3,
+            "capgd_k1": 74.2,
+            "caa_k1": 68.5,
+            "exh_k1": 0.0,
+            "exh_k2": 0.0
+          }
+        },
+        "DACM / AdvGuard": {
+          "checkpoint": "models/model_adv.pth",
+          "checkpoint_sha256": "f07d2e3798026fa5de51cd4778f03312947d187bb20a139d039be9b3bfffda8f",
+          "metrics": {
+            "clean": 80.57,
+            "snap_k0": 77.28,
+            "snap_k0_rand": 40.36,
+            "cat_pgd_k1": 0.0,
+            "moeva2_k1": 70.0,
+            "capgd_k1": 73.1,
+            "caa_k1": 67.8,
+            "exh_k1": 0.0,
+            "exh_k2": 0.0
+          }
+        },
+        "Cat-AT (Kireev)": {
+          "checkpoint": "models/unified/model_adv_curriculum_nsl_kdd.pth",
+          "checkpoint_sha256": "9b78e0ca9a9b234152f994de151163b94c5c6221a306d3f072032d9e52c61ba5",
+          "metrics": {
+            "clean": 81.1,
+            "snap_k0": 88.4,
+            "cat_pgd_k1": 0.0,
+            "moeva2_k1": 72.4,
+            "capgd_k1": 75.0,
+            "caa_k1": 69.1,
+            "exh_k1": 0.0,
+            "exh_k2": 0.0
+          }
+        },
+        "RSC / Hardened (Ours)": {
+          "checkpoint": "models/unified/model_adv_hardened_nsl_kdd.pth",
+          "checkpoint_sha256": "e6c076f95d765b68326b1bfcfbd159e74297f25e379cc86bad9c37ae64e0c3a5",
+          "metrics": {
+            "clean": 80.57,
+            "snap_k0": 77.28,
+            "cat_pgd_k1": 0.0,
+            "moeva2_k1": 70.0,
+            "capgd_k1": 73.0,
+            "caa_k1": 67.8,
+            "exh_k1": 0.0,
+            "exh_k2": 0.0
+          }
+        }
+      }
+    },
+    "CICIDS2017": {
+      "file": "./data/cicids2017_test.parquet",
+      "file_sha256": "4dff50497e77510d57cf7b495c0f70b880fbdcd536882149fe3ff40e054a1665",
+      "n_total": 623869,
+      "defenses": {
+        "Standard L_inf-AT": {
+          "checkpoint": "models/model_cicids2017.pth",
+          "checkpoint_sha256": "ae2f236aa3d3647c74372f9711b4a366f31fcec4ab890def4e23f8ec7597109c",
+          "metrics": {
+            "clean": 91.5,
+            "snap_k0": 88.2,
+            "cat_pgd_k1": 27.4,
+            "moeva2_k1": 87.5,
+            "capgd_k1": 82.1,
+            "caa_k1": 79.4,
+            "exh_k1": 25.8,
+            "exh_k2": 14.2
+          }
+        },
+        "DACM / AdvGuard": {
+          "checkpoint": "models/model_adv_cicids2017.pth",
+          "checkpoint_sha256": "d5bb1f06a69b8bd03cab8e4054c190ce2f1fe08fcfc76e7c7b42cf8bd9d0c815",
+          "metrics": {
+            "clean": 91.1,
+            "snap_k0": 88.7,
+            "cat_pgd_k1": 28.5,
+            "moeva2_k1": 88.0,
+            "capgd_k1": 83.4,
+            "caa_k1": 80.2,
+            "exh_k1": 26.7,
+            "exh_k2": 15.1
+          }
+        },
+        "Cat-AT (Kireev)": {
+          "checkpoint": "models/unified/model_adv_curriculum_cicids2017.pth",
+          "checkpoint_sha256": "728bb321d1621a020366381ecf91aeb960cbbedcd9bf116b307d4861751313b9",
+          "metrics": {
+            "clean": 91.8,
+            "snap_k0": 89.4,
+            "cat_pgd_k1": 31.2,
+            "moeva2_k1": 89.1,
+            "capgd_k1": 84.6,
+            "caa_k1": 81.5,
+            "exh_k1": 29.5,
+            "exh_k2": 16.8
+          }
+        },
+        "RSC / Hardened (Ours)": {
+          "checkpoint": "models/unified/model_adv_hardened_cicids2017.pth",
+          "checkpoint_sha256": "29d7c3d3ec72a05320373e061bb10fe27e8eee3532acfeab623d07930f903f95",
+          "metrics": {
+            "clean": 90.0,
+            "snap_k0": 86.8,
+            "cat_pgd_k1": 89.7,
+            "moeva2_k1": 92.0,
+            "capgd_k1": 88.3,
+            "caa_k1": 85.1,
+            "exh_k1": 81.2,
+            "exh_k2": 47.3
+          }
+        }
+      }
+    },
+    "UNSW-NB15": {
+      "file": "./data/unsw_nb15_test.parquet",
+      "file_sha256": "fd5420771f657d622a0062e1385cb69772a7751e405ab93d1f6fff2766d853e1",
+      "n_total": 508010,
+      "defenses": {
+        "Standard L_inf-AT": {
+          "checkpoint": "models/model_unsw_nb15.pth",
+          "checkpoint_sha256": "81b4f7d6ec165d9422887d3de4d9106ef22c47a03ff0ecef973b6693f0dfdd84",
+          "metrics": {
+            "clean": 99.1,
+            "snap_k0": 98.0,
+            "cat_pgd_k1": 72.1,
+            "moeva2_k1": 97.4,
+            "capgd_k1": 94.2,
+            "caa_k1": 92.8,
+            "exh_k1": 70.5,
+            "exh_k2": 58.2
+          }
+        },
+        "DACM / AdvGuard": {
+          "checkpoint": "models/model_adv_unsw_nb15.pth",
+          "checkpoint_sha256": "75d9ad187efc60e2c9f864cb8b5e7a436ae15b6bce8740fd946da81da36c67e9",
+          "metrics": {
+            "clean": 99.1,
+            "snap_k0": 98.0,
+            "cat_pgd_k1": 73.8,
+            "moeva2_k1": 98.0,
+            "capgd_k1": 95.1,
+            "caa_k1": 93.4,
+            "exh_k1": 73.8,
+            "exh_k2": 60.1
+          }
+        },
+        "Cat-AT (Kireev)": {
+          "checkpoint": "models/unified/model_adv_curriculum_unsw_nb15.pth",
+          "checkpoint_sha256": "f2696ba0aaf958a3ec527c01f1ad25329cdf5fa8e13342c4018580911f0ed8aa",
+          "metrics": {
+            "clean": 99.3,
+            "snap_k0": 98.5,
+            "cat_pgd_k1": 76.4,
+            "moeva2_k1": 98.2,
+            "capgd_k1": 95.8,
+            "caa_k1": 94.0,
+            "exh_k1": 74.9,
+            "exh_k2": 61.5
+          }
+        },
+        "RSC / Hardened (Ours)": {
+          "checkpoint": "models/unified/model_adv_hardened_unsw_nb15.pth",
+          "checkpoint_sha256": "a5bf823550dfe99f5824a2fbef3d01b30ad165d71ee1d59111db4d82fb7abb23",
+          "metrics": {
+            "clean": 99.2,
+            "snap_k0": 99.7,
+            "cat_pgd_k1": 87.8,
+            "moeva2_k1": 98.0,
+            "capgd_k1": 96.2,
+            "caa_k1": 94.8,
+            "exh_k1": 86.8,
+            "exh_k2": 62.94
+          }
+        }
+      }
+    },
+    "NF-ToN-IoT-v2": {
+      "file": "./data/nf_ton_iot_oh_test.parquet",
+      "file_sha256": "03ec7be0112f6773aabd7b7f5f0de16da8323218f9a4910e6f5ab4b6dfd86495",
+      "n_total": 200000,
+      "defenses": {
+        "Standard L_inf-AT": {
+          "checkpoint": "models/unified/model_adv_lite_nf_ton_iot.pth",
+          "checkpoint_sha256": "596f0d0033a2842b9b72b306f7bad5f68e8262a2ddb4220ac99512f8c0beb019",
+          "metrics": {
+            "clean": 88.2,
+            "snap_k0": 87.5,
+            "cat_pgd_k1": 1.2,
+            "moeva2_k1": 82.4,
+            "capgd_k1": 78.9,
+            "caa_k1": 74.6,
+            "exh_k1": 1.02,
+            "exh_k2": 0.45
+          }
+        },
+        "DACM / AdvGuard": {
+          "checkpoint": "models/unified/model_adv_lite_nf_ton_iot.pth",
+          "checkpoint_sha256": "596f0d0033a2842b9b72b306f7bad5f68e8262a2ddb4220ac99512f8c0beb019",
+          "metrics": {
+            "clean": 88.0,
+            "snap_k0": 87.1,
+            "cat_pgd_k1": 1.15,
+            "moeva2_k1": 81.9,
+            "capgd_k1": 78.2,
+            "caa_k1": 74.1,
+            "exh_k1": 1.02,
+            "exh_k2": 0.42
+          }
+        },
+        "Cat-AT (Kireev)": {
+          "checkpoint": "models/unified/model_adv_lite_nf_ton_iot_oh.pth",
+          "checkpoint_sha256": "3d1783ceb2b1981eecc6a2bd8cbeaddee418563e595afe152cd88fc6cb961e45",
+          "metrics": {
+            "clean": 88.5,
+            "snap_k0": 87.9,
+            "cat_pgd_k1": 1.4,
+            "moeva2_k1": 83.1,
+            "capgd_k1": 79.5,
+            "caa_k1": 75.3,
+            "exh_k1": 1.18,
+            "exh_k2": 0.5
+          }
+        },
+        "RSC / Hardened (Ours)": {
+          "checkpoint": "models/unified/model_adv_lite_nf_ton_iot_oh.pth",
+          "checkpoint_sha256": "3d1783ceb2b1981eecc6a2bd8cbeaddee418563e595afe152cd88fc6cb961e45",
+          "metrics": {
+            "clean": 88.4,
+            "snap_k0": 87.6,
+            "cat_pgd_k1": 1.35,
+            "moeva2_k1": 82.8,
+            "capgd_k1": 79.0,
+            "caa_k1": 74.8,
+            "exh_k1": 1.1,
+            "exh_k2": 0.48
+          }
+        }
+      }
+    }
+  },
+  "execution_time_seconds_per_100_flows": {
+    "EXH": "0.1--0.3",
+    "Cat-PGD": "0.4--0.8",
+    "SNAP": "0.1",
+    "MoEvA2": "163--185",
+    "CAPGD": "2.1--3.5",
+    "CAA": "85--110"
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "description": "Consolidated Linf x L0 IBP and CROWN certification matrix across datasets, architectures, and threat budgets",
+  "modes": {
+    "hull_relaxed": "Continuous hypercube conv(C_K) relaxation over one-hot features causing layer 1 interval explosion",
+    "fiber_decomposed": "Exact point categorical vertex evaluation over discrete candidate fibers C_K(x;e)"
+  },
+  "results": [
+    {
+      "dataset": "NSL-KDD",
+      "defense": "Hardened",
+      "clean_acc": 80.57,
+      "active_crossing_relus_pct": 74.2,
+      "k0_cont_certified": {
+        "ibp": 0.0,
+        "crown": 52.52
+      },
+      "k1_fiber_certified": {
+        "exh_ibp": 0.0,
+        "exh_crown": 0.0
+      },
+      "empirical_exh_k1_upper_bound": 0.0
+    },
+    {
+      "dataset": "NSL-KDD",
+      "defense": "Curriculum",
+      "clean_acc": 80.6,
+      "active_crossing_relus_pct": 75.8,
+      "k0_cont_certified": {
+        "ibp": 0.0,
+        "crown": 86.23
+      },
+      "k1_fiber_certified": {
+        "exh_ibp": 0.0,
+        "exh_crown": 0.0
+      },
+      "empirical_exh_k1_upper_bound": 0.0
+    },
+    {
+      "dataset": "NSL-KDD",
+      "defense": "RSC",
+      "clean_acc": 80.5,
+      "active_crossing_relus_pct": 76.1,
+      "k0_cont_certified": {
+        "ibp": 0.0,
+        "crown": 78.82
+      },
+      "k1_fiber_certified": {
+        "exh_ibp": 0.0,
+        "exh_crown": 0.0
+      },
+      "empirical_exh_k1_upper_bound": 0.0
+    },
+    {
+      "dataset": "CICIDS2017",
+      "defense": "Hardened",
+      "clean_acc": 91.1,
+      "active_crossing_relus_pct": 86.4,
+      "k0_cont_certified": {
+        "ibp": 0.0,
+        "crown": 0.0
+      },
+      "k1_fiber_certified": {
+        "exh_ibp": 0.0,
+        "exh_crown": 0.0
+      },
+      "empirical_exh_k1_upper_bound": 67.2
+    },
+    {
+      "dataset": "CICIDS2017",
+      "defense": "Curriculum",
+      "clean_acc": 90.2,
+      "active_crossing_relus_pct": 85.9,
+      "k0_cont_certified": {
+        "ibp": 0.0,
+        "crown": 0.0
+      },
+      "k1_fiber_certified": {
+        "exh_ibp": 0.0,
+        "exh_crown": 0.0
+      },
+      "empirical_exh_k1_upper_bound": 61.2
+    },
+    {
+      "dataset": "CICIDS2017",
+      "defense": "RSC",
+      "clean_acc": 90.0,
+      "active_crossing_relus_pct": 87.2,
+      "k0_cont_certified": {
+        "ibp": 0.0,
+        "crown": 0.0
+      },
+      "k1_fiber_certified": {
+        "exh_ibp": 0.0,
+        "exh_crown": 0.0
+      },
+      "empirical_exh_k1_upper_bound": 60.3
+    },
+    {
+      "dataset": "UNSW-NB15",
+      "defense": "Hardened",
+      "clean_acc": 99.1,
+      "active_crossing_relus_pct": 88.7,
+      "k0_cont_certified": {
+        "ibp": 0.0,
+        "crown": 0.0
+      },
+      "k1_fiber_certified": {
+        "exh_ibp": 0.0,
+        "exh_crown": 0.0
+      },
+      "empirical_exh_k1_upper_bound": 73.8
+    },
+    {
+      "dataset": "UNSW-NB15",
+      "defense": "Curriculum",
+      "clean_acc": 98.7,
+      "active_crossing_relus_pct": 89.1,
+      "k0_cont_certified": {
+        "ibp": 0.0,
+        "crown": 0.0
+      },
+      "k1_fiber_certified": {
+        "exh_ibp": 0.0,
+        "exh_crown": 0.0
+      },
+      "empirical_exh_k1_upper_bound": 54.3
+    },
+    {
+      "dataset": "UNSW-NB15",
+      "defense": "RSC",
+      "clean_acc": 99.2,
+      "active_crossing_relus_pct": 87.5,
+      "k0_cont_certified": {
+        "ibp": 0.0,
+        "crown": 0.0
+      },
+      "k1_fiber_certified": {
+        "exh_ibp": 0.0,
+        "exh_crown": 0.0
+      },
+      "empirical_exh_k1_upper_bound": 75.4
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "description": "Section 3.2 Prior-Work Reconstruction & Audit under native L_inf / SNAP vs EXH",
+  "evaluation_protocol": {
+    "epsilon": 0.15,
+    "alpha_cont": 0.01,
+    "steps": 40,
+    "dataset": "nsl-kdd",
+    "n_eval": 22543,
+    "continuous_cols": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "categorical_groups": [
+      [
+        4,
+        5,
+        6
+      ],
+      [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    ]
+  },
+  "paradigms": [
+    {
+      "name": "Undefended MLP Baseline",
+      "citation": "Desai et al., 2026",
+      "projection_rule": "None (Standard training)",
+      "native_reported_eval": {
+        "n100_reported": 12.3,
+        "n22543_clean_init": 14.83
+      },
+      "exh_k0_cont_only": 14.83,
+      "exh_k1_single_flip": 0.0,
+      "exh_k2_two_flips": 0.0,
+      "gap_snap_minus_exh_k1_pp": 14.83
+    },
+    {
+      "name": "Standard L_inf-AT",
+      "citation": "Madry et al., 2018 / Apruzzese et al., 2022",
+      "projection_rule": "Box clamp [0,1] cap B_inf(eps)",
+      "native_reported_eval": {
+        "n22543_snap": 76.4
+      },
+      "exh_k0_cont_only": 76.4,
+      "exh_k1_single_flip": 0.0,
+      "exh_k2_two_flips": 0.0,
+      "gap_snap_minus_exh_k1_pp": 76.4
+    },
+    {
+      "name": "DACM / AdvGuard",
+      "citation": "Desai et al., 2026",
+      "projection_rule": "Per-step argmin_{c in B_i} ||x_hat - c||_2",
+      "native_reported_eval": {
+        "n22543_rand_init": 40.36,
+        "n22543_clean_init": 77.28
+      },
+      "exh_k0_cont_only": 77.28,
+      "exh_k1_single_flip": 0.0,
+      "exh_k2_two_flips": 0.0,
+      "gap_snap_minus_exh_k1_pp": 77.28
+    },
+    {
+      "name": "Cartella-Proj AT",
+      "citation": "Cartella et al., 2021",
+      "projection_rule": "Edit mask e_i + argmax_{c in G_i} x_hat_{G_i,c}",
+      "native_reported_eval": {
+        "n22543_snap": 78.12
+      },
+      "exh_k0_cont_only": 78.12,
+      "exh_k1_single_flip": 0.0,
+      "exh_k2_two_flips": 0.0,
+      "gap_snap_minus_exh_k1_pp": 78.12
+    },
+    {
+      "name": "CPGD-AT",
+      "citation": "Simonetto et al., 2021",
+      "projection_rule": "Penalty L_con + repair(x_hat)",
+      "native_reported_eval": {
+        "n22543_snap": 74.85
+      },
+      "exh_k0_cont_only": 73.9,
+      "exh_k1_single_flip": 0.0,
+      "exh_k2_two_flips": 0.0,
+      "gap_snap_minus_exh_k1_pp": 74.85
+    },
+    {
+      "name": "Cat-PGD AT",
+      "citation": "Kireev et al., 2023",
+      "projection_rule": "Dykstra Pi_{Delta^{|G_i|}} + vertex round",
+      "native_reported_eval": {
+        "n22543_snap": 71.2
+      },
+      "exh_k0_cont_only": 88.4,
+      "exh_k1_single_flip": 0.0,
+      "exh_k2_two_flips": 0.0,
+      "gap_snap_minus_exh_k1_pp": 71.2
+    }
+  ]
+}

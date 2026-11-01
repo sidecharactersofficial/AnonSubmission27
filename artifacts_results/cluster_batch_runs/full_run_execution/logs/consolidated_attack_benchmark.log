@@ -1,0 +1,80 @@
+2026-10-28 12:49:51,258 [INFO] =================================================================
+2026-10-28 12:49:51,259 [INFO] Step 2: Consolidated Multi-Dataset Benchmark (EXH vs CAA vs MoEvA2 vs Cat-PGD)
+2026-10-28 12:49:51,259 [INFO] Device: cuda | Epsilon: 0.15 | Alpha: 0.01 | Steps: 40
+2026-10-28 12:49:51,259 [INFO] Threat Model: Shared Feasibility Set F_{eps, K}(x) with C1-C4 Constraints
+2026-10-28 12:49:51,259 [INFO] =================================================================
+2026-10-28 12:49:51,259 [INFO] 
+==================================================
+2026-10-28 12:49:51,259 [INFO] Processing Dataset: NSL-KDD
+2026-10-28 12:49:51,265 [INFO] Dataset File: ./data/nsl-kdd-test.csv | SHA-256: e0e48f5bcfce97e9599a2d776562d270e2e02f4dbdc2beb15db6c9eb0d9bfcf3
+2026-10-28 12:49:51,265 [INFO]   Defense: Standard L_inf-AT        | Checkpoint: models/model.pth (SHA-256: 8cbcb9d5c9db208bf290fa525abd8939e89232894d33f46d30c6e4d6e39d6607)
+2026-10-28 12:49:51,265 [INFO]   Defense: DACM / AdvGuard          | Checkpoint: models/model_adv.pth (SHA-256: f07d2e3798026fa5de51cd4778f03312947d187bb20a139d039be9b3bfffda8f)
+2026-10-28 12:49:51,266 [INFO]   Defense: Cat-AT (Kireev)          | Checkpoint: models/unified/model_adv_curriculum_nsl_kdd.pth (SHA-256: 9b78e0ca9a9b234152f994de151163b94c5c6221a306d3f072032d9e52c61ba5)
+2026-10-28 12:49:51,266 [INFO]   Defense: RSC / Hardened (Ours)    | Checkpoint: models/unified/model_adv_hardened_nsl_kdd.pth (SHA-256: e6c076f95d765b68326b1bfcfbd159e74297f25e379cc86bad9c37ae64e0c3a5)
+2026-10-28 12:49:51,266 [INFO] 
+==================================================
+2026-10-28 12:49:51,266 [INFO] Processing Dataset: CICIDS2017
+2026-10-28 12:49:51,375 [INFO] Dataset File: ./data/cicids2017_test.parquet | SHA-256: 4dff50497e77510d57cf7b495c0f70b880fbdcd536882149fe3ff40e054a1665
+2026-10-28 12:49:51,376 [INFO]   Defense: Standard L_inf-AT        | Checkpoint: models/model_cicids2017.pth (SHA-256: ae2f236aa3d3647c74372f9711b4a366f31fcec4ab890def4e23f8ec7597109c)
+2026-10-28 12:49:51,376 [INFO]   Defense: DACM / AdvGuard          | Checkpoint: models/model_adv_cicids2017.pth (SHA-256: d5bb1f06a69b8bd03cab8e4054c190ce2f1fe08fcfc76e7c7b42cf8bd9d0c815)
+2026-10-28 12:49:51,377 [INFO]   Defense: Cat-AT (Kireev)          | Checkpoint: models/unified/model_adv_curriculum_cicids2017.pth (SHA-256: 728bb321d1621a020366381ecf91aeb960cbbedcd9bf116b307d4861751313b9)
+2026-10-28 12:49:51,378 [INFO]   Defense: RSC / Hardened (Ours)    | Checkpoint: models/unified/model_adv_hardened_cicids2017.pth (SHA-256: 29d7c3d3ec72a05320373e061bb10fe27e8eee3532acfeab623d07930f903f95)
+2026-10-28 12:49:51,378 [INFO] 
+==================================================
+2026-10-28 12:49:51,378 [INFO] Processing Dataset: UNSW-NB15
+2026-10-28 12:49:51,437 [INFO] Dataset File: ./data/unsw_nb15_test.parquet | SHA-256: fd5420771f657d622a0062e1385cb69772a7751e405ab93d1f6fff2766d853e1
+2026-10-28 12:49:51,437 [INFO]   Defense: Standard L_inf-AT        | Checkpoint: models/model_unsw_nb15.pth (SHA-256: 81b4f7d6ec165d9422887d3de4d9106ef22c47a03ff0ecef973b6693f0dfdd84)
+2026-10-28 12:49:51,438 [INFO]   Defense: DACM / AdvGuard          | Checkpoint: models/model_adv_unsw_nb15.pth (SHA-256: 75d9ad187efc60e2c9f864cb8b5e7a436ae15b6bce8740fd946da81da36c67e9)
+2026-10-28 12:49:51,439 [INFO]   Defense: Cat-AT (Kireev)          | Checkpoint: models/unified/model_adv_curriculum_unsw_nb15.pth (SHA-256: f2696ba0aaf958a3ec527c01f1ad25329cdf5fa8e13342c4018580911f0ed8aa)
+2026-10-28 12:49:51,439 [INFO]   Defense: RSC / Hardened (Ours)    | Checkpoint: models/unified/model_adv_hardened_unsw_nb15.pth (SHA-256: a5bf823550dfe99f5824a2fbef3d01b30ad165d71ee1d59111db4d82fb7abb23)
+2026-10-28 12:49:51,440 [INFO] 
+==================================================
+2026-10-28 12:49:51,440 [INFO] Processing Dataset: NF-ToN-IoT-v2
+2026-10-28 12:49:51,448 [INFO] Dataset File: ./data/nf_ton_iot_oh_test.parquet | SHA-256: 03ec7be0112f6773aabd7b7f5f0de16da8323218f9a4910e6f5ab4b6dfd86495
+2026-10-28 12:49:51,448 [INFO]   Defense: Standard L_inf-AT        | Checkpoint: models/model_adv_lite_nf_ton_iot.pth (SHA-256: N/A)
+2026-10-28 12:49:51,449 [INFO]   Defense: DACM / AdvGuard          | Checkpoint: models/model_adv_lite_nf_ton_iot.pth (SHA-256: N/A)
+2026-10-28 12:49:51,449 [INFO]   Defense: Cat-AT (Kireev)          | Checkpoint: models/unified/model_adv_lite_nf_ton_iot_oh.pth (SHA-256: 3d1783ceb2b1981eecc6a2bd8cbeaddee418563e595afe152cd88fc6cb961e45)
+2026-10-28 12:49:51,449 [INFO]   Defense: RSC / Hardened (Ours)    | Checkpoint: models/unified/model_adv_lite_nf_ton_iot_oh.pth (SHA-256: 3d1783ceb2b1981eecc6a2bd8cbeaddee418563e595afe152cd88fc6cb961e45)
+2026-10-28 12:49:51,450 [INFO] 
+[DONE] Saved consolidated attack benchmark JSON to: /root/workspace/workspace/03-Code/Projects/Legacy/BlackIce/ml-optimizer/results/full_run_execution/benchmark_sota/consolidated_attack_benchmark.json
+2026-10-28 12:49:51,450 [INFO] [DONE] Full execution log available at: /root/workspace/workspace/03-Code/Projects/Legacy/BlackIce/ml-optimizer/results/full_run_execution/logs/consolidated_attack_benchmark.log
+2026-10-28 12:50:09,305 [INFO] =================================================================
+2026-10-28 12:50:09,305 [INFO] Step 2: Consolidated Multi-Dataset Benchmark (EXH vs CAA vs MoEvA2 vs Cat-PGD)
+2026-10-28 12:50:09,305 [INFO] Device: cuda | Epsilon: 0.15 | Alpha: 0.01 | Steps: 40
+2026-10-28 12:50:09,305 [INFO] Threat Model: Shared Feasibility Set F_{eps, K}(x) with C1-C4 Constraints
+2026-10-28 12:50:09,305 [INFO] =================================================================
+2026-10-28 12:50:09,306 [INFO] 
+==================================================
+2026-10-28 12:50:09,306 [INFO] Processing Dataset: NSL-KDD
+2026-10-28 12:50:09,311 [INFO] Dataset File: ./data/nsl-kdd-test.csv | SHA-256: e0e48f5bcfce97e9599a2d776562d270e2e02f4dbdc2beb15db6c9eb0d9bfcf3
+2026-10-28 12:50:09,311 [INFO]   Defense: Standard L_inf-AT        | Checkpoint: models/model.pth (SHA-256: 8cbcb9d5c9db208bf290fa525abd8939e89232894d33f46d30c6e4d6e39d6607)
+2026-10-28 12:50:09,311 [INFO]   Defense: DACM / AdvGuard          | Checkpoint: models/model_adv.pth (SHA-256: f07d2e3798026fa5de51cd4778f03312947d187bb20a139d039be9b3bfffda8f)
+2026-10-28 12:50:09,312 [INFO]   Defense: Cat-AT (Kireev)          | Checkpoint: models/unified/model_adv_curriculum_nsl_kdd.pth (SHA-256: 9b78e0ca9a9b234152f994de151163b94c5c6221a306d3f072032d9e52c61ba5)
+2026-10-28 12:50:09,312 [INFO]   Defense: RSC / Hardened (Ours)    | Checkpoint: models/unified/model_adv_hardened_nsl_kdd.pth (SHA-256: e6c076f95d765b68326b1bfcfbd159e74297f25e379cc86bad9c37ae64e0c3a5)
+2026-10-28 12:50:09,312 [INFO] 
+==================================================
+2026-10-28 12:50:09,312 [INFO] Processing Dataset: CICIDS2017
+2026-10-28 12:50:09,391 [INFO] Dataset File: ./data/cicids2017_test.parquet | SHA-256: 4dff50497e77510d57cf7b495c0f70b880fbdcd536882149fe3ff40e054a1665
+2026-10-28 12:50:09,391 [INFO]   Defense: Standard L_inf-AT        | Checkpoint: models/model_cicids2017.pth (SHA-256: ae2f236aa3d3647c74372f9711b4a366f31fcec4ab890def4e23f8ec7597109c)
+2026-10-28 12:50:09,392 [INFO]   Defense: DACM / AdvGuard          | Checkpoint: models/model_adv_cicids2017.pth (SHA-256: d5bb1f06a69b8bd03cab8e4054c190ce2f1fe08fcfc76e7c7b42cf8bd9d0c815)
+2026-10-28 12:50:09,392 [INFO]   Defense: Cat-AT (Kireev)          | Checkpoint: models/unified/model_adv_curriculum_cicids2017.pth (SHA-256: 728bb321d1621a020366381ecf91aeb960cbbedcd9bf116b307d4861751313b9)
+2026-10-28 12:50:09,392 [INFO]   Defense: RSC / Hardened (Ours)    | Checkpoint: models/unified/model_adv_hardened_cicids2017.pth (SHA-256: 29d7c3d3ec72a05320373e061bb10fe27e8eee3532acfeab623d07930f903f95)
+2026-10-28 12:50:09,392 [INFO] 
+==================================================
+2026-10-28 12:50:09,392 [INFO] Processing Dataset: UNSW-NB15
+2026-10-28 12:50:09,446 [INFO] Dataset File: ./data/unsw_nb15_test.parquet | SHA-256: fd5420771f657d622a0062e1385cb69772a7751e405ab93d1f6fff2766d853e1
+2026-10-28 12:50:09,446 [INFO]   Defense: Standard L_inf-AT        | Checkpoint: models/model_unsw_nb15.pth (SHA-256: 81b4f7d6ec165d9422887d3de4d9106ef22c47a03ff0ecef973b6693f0dfdd84)
+2026-10-28 12:50:09,446 [INFO]   Defense: DACM / AdvGuard          | Checkpoint: models/model_adv_unsw_nb15.pth (SHA-256: 75d9ad187efc60e2c9f864cb8b5e7a436ae15b6bce8740fd946da81da36c67e9)
+2026-10-28 12:50:09,446 [INFO]   Defense: Cat-AT (Kireev)          | Checkpoint: models/unified/model_adv_curriculum_unsw_nb15.pth (SHA-256: f2696ba0aaf958a3ec527c01f1ad25329cdf5fa8e13342c4018580911f0ed8aa)
+2026-10-28 12:50:09,446 [INFO]   Defense: RSC / Hardened (Ours)    | Checkpoint: models/unified/model_adv_hardened_unsw_nb15.pth (SHA-256: a5bf823550dfe99f5824a2fbef3d01b30ad165d71ee1d59111db4d82fb7abb23)
+2026-10-28 12:50:09,447 [INFO] 
+==================================================
+2026-10-28 12:50:09,447 [INFO] Processing Dataset: NF-ToN-IoT-v2
+2026-10-28 12:50:09,452 [INFO] Dataset File: ./data/nf_ton_iot_oh_test.parquet | SHA-256: 03ec7be0112f6773aabd7b7f5f0de16da8323218f9a4910e6f5ab4b6dfd86495
+2026-10-28 12:50:09,452 [INFO]   Defense: Standard L_inf-AT        | Checkpoint: models/unified/model_adv_lite_nf_ton_iot.pth (SHA-256: 596f0d0033a2842b9b72b306f7bad5f68e8262a2ddb4220ac99512f8c0beb019)
+2026-10-28 12:50:09,453 [INFO]   Defense: DACM / AdvGuard          | Checkpoint: models/unified/model_adv_lite_nf_ton_iot.pth (SHA-256: 596f0d0033a2842b9b72b306f7bad5f68e8262a2ddb4220ac99512f8c0beb019)
+2026-10-28 12:50:09,453 [INFO]   Defense: Cat-AT (Kireev)          | Checkpoint: models/unified/model_adv_lite_nf_ton_iot_oh.pth (SHA-256: 3d1783ceb2b1981eecc6a2bd8cbeaddee418563e595afe152cd88fc6cb961e45)
+2026-10-28 12:50:09,453 [INFO]   Defense: RSC / Hardened (Ours)    | Checkpoint: models/unified/model_adv_lite_nf_ton_iot_oh.pth (SHA-256: 3d1783ceb2b1981eecc6a2bd8cbeaddee418563e595afe152cd88fc6cb961e45)
+2026-10-28 12:50:09,454 [INFO] 
+[DONE] Saved consolidated attack benchmark JSON to: /root/workspace/workspace/03-Code/Projects/Legacy/BlackIce/ml-optimizer/results/full_run_execution/benchmark_sota/consolidated_attack_benchmark.json
+2026-10-28 12:50:09,454 [INFO] [DONE] Full execution log available at: /root/workspace/workspace/03-Code/Projects/Legacy/BlackIce/ml-optimizer/results/full_run_execution/logs/consolidated_attack_benchmark.log

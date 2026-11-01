@@ -1,0 +1,26 @@
+2026-10-28 12:48:52,564 [INFO] =================================================================
+2026-10-28 12:48:52,564 [INFO] Section 3: Reconstructing Prior-Work Paradigms on Full NSL-KDD
+2026-10-28 12:48:52,565 [INFO] Device: cuda | Epsilon: 0.15 | Alpha: 0.01 | Steps: 40
+2026-10-28 12:48:52,565 [INFO] =================================================================
+2026-10-28 12:48:52,570 [INFO] Dataset path: ./data/nsl-kdd-test.csv | SHA-256: e0e48f5bcfce97e9599a2d776562d270e2e02f4dbdc2beb15db6c9eb0d9bfcf3
+2026-10-28 12:48:52,753 [INFO] Total test flows in NSL-KDD: 22543
+2026-10-28 12:48:52,754 [INFO] Checkpoint [Undefended Baseline]: models/model.pth (SHA-256: 8cbcb9d5c9db208bf290fa525abd8939e89232894d33f46d30c6e4d6e39d6607)
+2026-10-28 12:48:52,754 [INFO] Checkpoint [DACM / AdvGuard Hardened]: models/model_adv.pth (SHA-256: f07d2e3798026fa5de51cd4778f03312947d187bb20a139d039be9b3bfffda8f)
+2026-10-28 12:48:52,754 [INFO] Checkpoint [Hardened Unified]: models/unified/model_adv_hardened_nsl_kdd.pth (SHA-256: e6c076f95d765b68326b1bfcfbd159e74297f25e379cc86bad9c37ae64e0c3a5)
+2026-10-28 12:48:52,754 [INFO] 
+--- Evaluating Paradigm 1: Undefended MLP Baseline ---
+2026-10-28 12:48:58,826 [INFO] Undefended: Clean=80.51% | Native/K=0=14.83% | K=1=0.00% | K=2=0.00% | Gap=+14.83pp
+2026-10-28 12:48:58,826 [INFO] 
+--- Evaluating Paradigm 2: DACM / AdvGuard (Desai et al.) ---
+2026-10-28 12:49:03,712 [INFO] DACM: Clean=80.57% | Native Rand=41.41% | Clean-Init/K=0=77.28% | K=1=0.00% | K=2=0.00% | Gap=+77.28pp
+2026-10-28 12:49:03,713 [INFO] 
+--- Evaluating Paradigm 3: Standard L_inf-AT ---
+2026-10-28 12:49:03,713 [INFO] 
+--- Evaluating Paradigm 4: Cartella-Proj AT (Cartella et al.) ---
+2026-10-28 12:49:03,713 [INFO] 
+--- Evaluating Paradigm 5: CPGD-AT (Simonetto et al.) ---
+2026-10-28 12:49:03,713 [INFO] 
+--- Evaluating Paradigm 6: Cat-PGD AT (Kireev et al.) ---
+2026-10-28 12:49:03,713 [INFO] 
+[DONE] Saved consolidated reconstruction JSON to: /root/workspace/workspace/03-Code/Projects/Legacy/BlackIce/ml-optimizer/results/full_run_execution/section3_reconstruction/prior_work_reconstruction.json
+2026-10-28 12:49:03,713 [INFO] [DONE] Full execution log available at: /root/workspace/workspace/03-Code/Projects/Legacy/BlackIce/ml-optimizer/results/full_run_execution/logs/section3_reconstruction.log

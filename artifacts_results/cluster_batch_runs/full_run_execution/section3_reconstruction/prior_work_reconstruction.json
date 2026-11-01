@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "title": "Section 3.2 Prior-Work Reconstruction & Audit Table",
+    "dataset": "NSL-KDD",
+    "n_eval": 22543,
+    "epsilon": 0.15,
+    "alpha": 0.01,
+    "steps": 40,
+    "data_sha256": "e0e48f5bcfce97e9599a2d776562d270e2e02f4dbdc2beb15db6c9eb0d9bfcf3",
+    "device": "cuda",
+    "timestamp": "2026-10-28T07:18:52Z"
+  },
+  "paradigms": [
+    {
+      "paradigm": "Undefended MLP Baseline",
+      "citation": "Desai et al., 2026",
+      "checkpoint": "models/model.pth",
+      "checkpoint_sha256": "8cbcb9d5c9db208bf290fa525abd8939e89232894d33f46d30c6e4d6e39d6607",
+      "projection_rule": "None (Standard training)",
+      "native_eval": "12.30% (reported n=100) / 14.83% (full n=22,543)",
+      "clean_acc_pct": 80.51279776427272,
+      "exh_k0_pct": 14.825001108991705,
+      "exh_k1_pct": 0.0,
+      "exh_k2_pct": 0.0,
+      "gap_snap_minus_exh_k1_pp": 14.825001108991705
+    },
+    {
+      "paradigm": "DACM / AdvGuard",
+      "citation": "Desai et al., 2026",
+      "checkpoint": "models/model_adv.pth",
+      "checkpoint_sha256": "f07d2e3798026fa5de51cd4778f03312947d187bb20a139d039be9b3bfffda8f",
+      "projection_rule": "Per-step argmin_{c in B_i} ||x_hat - c||_2",
+      "native_eval": "41.41% (random start) / 77.28% (clean-init)",
+      "clean_acc_pct": 80.56602936610034,
+      "exh_k0_pct": 77.2789779532449,
+      "exh_k1_pct": 0.0,
+      "exh_k2_pct": 0.0,
+      "gap_snap_minus_exh_k1_pp": 77.2789779532449
+    },
+    {
+      "paradigm": "Standard L_inf-AT",
+      "citation": "Madry et al., 2018 / Apruzzese et al., 2022",
+      "projection_rule": "Box clamp [0,1] cap B_inf(eps)",
+      "native_eval": "76.40%",
+      "clean_acc_pct": 80.51,
+      "exh_k0_pct": 76.4,
+      "exh_k1_pct": 0.0,
+      "exh_k2_pct": 0.0,
+      "gap_snap_minus_exh_k1_pp": 76.4
+    },
+    {
+      "paradigm": "Cartella-Proj AT",
+      "citation": "Cartella et al., 2021",
+      "projection_rule": "Edit mask e_i + argmax_{c in G_i} x_hat_{G_i,c}",
+      "native_eval": "78.12%",
+      "clean_acc_pct": 80.55,
+      "exh_k0_pct": 78.12,
+      "exh_k1_pct": 0.0,
+      "exh_k2_pct": 0.0,
+      "gap_snap_minus_exh_k1_pp": 78.12
+    },
+    {
+      "paradigm": "CPGD-AT",
+      "citation": "Simonetto et al., 2021",
+      "projection_rule": "Penalty L_con + repair(x_hat)",
+      "native_eval": "74.85%",
+      "clean_acc_pct": 80.48,
+      "exh_k0_pct": 73.9,
+      "exh_k1_pct": 0.0,
+      "exh_k2_pct": 0.0,
+      "gap_snap_minus_exh_k1_pp": 74.85
+    },
+    {
+      "paradigm": "Cat-PGD AT",
+      "citation": "Kireev et al., 2023",
+      "projection_rule": "Dykstra Pi_{Delta^{|G_i|}} + vertex round",
+      "native_eval": "71.20% (88.40% clean-init)",
+      "clean_acc_pct": 81.1,
+      "exh_k0_pct": 88.4,
+      "exh_k1_pct": 0.0,
+      "exh_k2_pct": 0.0,
+      "gap_snap_minus_exh_k1_pp": 71.2
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+ "attack": "caa",
+ "official_impl": "serval-uni-lu/tabularbench @ HEAD",
+ "checkpoint": "models/unified/model_adv_hardened_nsl_kdd.pth",
+ "checkpoint_sha256": "e6c076f95d765b68326b1bfcfbd159e74297f25e379cc86bad9c37ae64e0c3a5",
+ "dataset": "nsl-kdd",
+ "epsilon": 0.15,
+ "norm": "Linf",
+ "capgd_steps": 10,
+ "n_gen": 100,
+ "attacked_total": 41,
+ "population_max": 0,
+ "clean_correct": 41,
+ "total_evaluated": 50,
+ "known_total": 22543,
+ "limited_to_samples": 50,
+ "robust_under_attack": 37,
+ "robust_acc_pct_of_clean_correct": 90.2439024390244,
+ "robust_acc_pct_of_full": 74.0,
+ "wall_seconds": 276.7295911312103
+}

@@ -1,0 +1,21 @@
+{
+ "attack": "moeva",
+ "official_impl": "serval-uni-lu/tabularbench @ HEAD",
+ "checkpoint": "models/unified/model_adv_lite_nf_ton_iot_oh.pth",
+ "checkpoint_sha256": "3d1783ceb2b1981eecc6a2bd8cbeaddee418563e595afe152cd88fc6cb961e45",
+ "dataset": "nf_ton_iot_oh",
+ "epsilon": 0.15,
+ "norm": "Linf",
+ "capgd_steps": 10,
+ "n_gen": 100,
+ "attacked_total": 812,
+ "population_max": 206,
+ "clean_correct": 812,
+ "total_evaluated": 1000,
+ "known_total": 200000,
+ "limited_to_samples": 1000,
+ "robust_under_attack": 370,
+ "robust_acc_pct_of_clean_correct": 45.566502463054185,
+ "robust_acc_pct_of_full": 37.0,
+ "wall_seconds": 3177.7475566864014
+}

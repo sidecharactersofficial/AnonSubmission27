@@ -1,0 +1,21 @@
+{
+ "attack": "moeva",
+ "official_impl": "serval-uni-lu/tabularbench @ HEAD",
+ "checkpoint": "models/unified/model_adv_hardened_nsl_kdd.pth",
+ "checkpoint_sha256": "e6c076f95d765b68326b1bfcfbd159e74297f25e379cc86bad9c37ae64e0c3a5",
+ "dataset": "nsl-kdd",
+ "epsilon": 0.15,
+ "norm": "Linf",
+ "capgd_steps": 10,
+ "n_gen": 100,
+ "attacked_total": 41,
+ "population_max": 206,
+ "clean_correct": 41,
+ "total_evaluated": 50,
+ "known_total": 22543,
+ "limited_to_samples": 50,
+ "robust_under_attack": 7,
+ "robust_acc_pct_of_clean_correct": 17.073170731707318,
+ "robust_acc_pct_of_full": 14.000000000000002,
+ "wall_seconds": 248.54170680046082
+}

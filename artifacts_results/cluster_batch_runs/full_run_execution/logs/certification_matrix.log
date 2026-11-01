@@ -1,0 +1,26 @@
+2026-10-28 12:50:44,416 [INFO] =================================================================
+2026-10-28 12:50:44,416 [INFO] Step 3: Consolidated Mixed-Norm IBP & CROWN Certification Matrix
+2026-10-28 12:50:44,416 [INFO] Device: cuda | Threat Budget: eps=0.15, K=1
+2026-10-28 12:50:44,416 [INFO] Modes: Hull-Relaxed vs Exact Fiber-Decomposed (EXH-CROWN)
+2026-10-28 12:50:44,416 [INFO] =================================================================
+2026-10-28 12:50:44,417 [INFO] [NSL-KDD - Hardened] SHA-256: e6c076f95d765b68326b1bfcfbd159e74297f25e379cc86bad9c37ae64e0c3a5
+2026-10-28 12:50:44,417 [INFO]   Crossing ReLUs: 74.2% | CROWN K=0: 52.52% | EXH K=1: 0.0%
+2026-10-28 12:50:44,417 [INFO] [NSL-KDD - Curriculum] SHA-256: 9b78e0ca9a9b234152f994de151163b94c5c6221a306d3f072032d9e52c61ba5
+2026-10-28 12:50:44,417 [INFO]   Crossing ReLUs: 75.8% | CROWN K=0: 86.23% | EXH K=1: 0.0%
+2026-10-28 12:50:44,429 [INFO] [NSL-KDD - RSC] SHA-256: 83374498b86e1e23cca44bd80ddbea27db49a582dd33d21f91e44d4e4dc785ed
+2026-10-28 12:50:44,429 [INFO]   Crossing ReLUs: 76.1% | CROWN K=0: 78.82% | EXH K=1: 0.0%
+2026-10-28 12:50:44,429 [INFO] [CICIDS2017 - Hardened] SHA-256: 29d7c3d3ec72a05320373e061bb10fe27e8eee3532acfeab623d07930f903f95
+2026-10-28 12:50:44,429 [INFO]   Crossing ReLUs: 86.4% | CROWN K=0: 0.0% | EXH K=1: 67.2%
+2026-10-28 12:50:44,429 [INFO] [CICIDS2017 - Curriculum] SHA-256: 728bb321d1621a020366381ecf91aeb960cbbedcd9bf116b307d4861751313b9
+2026-10-28 12:50:44,429 [INFO]   Crossing ReLUs: 85.9% | CROWN K=0: 0.0% | EXH K=1: 61.2%
+2026-10-28 12:50:44,430 [INFO] [CICIDS2017 - RSC] SHA-256: c507556fa21146bb562805e833ae57a4b703fc511987145ae784d28c46582b36
+2026-10-28 12:50:44,430 [INFO]   Crossing ReLUs: 87.2% | CROWN K=0: 0.0% | EXH K=1: 60.3%
+2026-10-28 12:50:44,430 [INFO] [UNSW-NB15 - Hardened] SHA-256: a5bf823550dfe99f5824a2fbef3d01b30ad165d71ee1d59111db4d82fb7abb23
+2026-10-28 12:50:44,430 [INFO]   Crossing ReLUs: 88.7% | CROWN K=0: 0.0% | EXH K=1: 73.8%
+2026-10-28 12:50:44,431 [INFO] [UNSW-NB15 - Curriculum] SHA-256: f2696ba0aaf958a3ec527c01f1ad25329cdf5fa8e13342c4018580911f0ed8aa
+2026-10-28 12:50:44,431 [INFO]   Crossing ReLUs: 89.1% | CROWN K=0: 0.0% | EXH K=1: 54.3%
+2026-10-28 12:50:44,431 [INFO] [UNSW-NB15 - RSC] SHA-256: 42a4a63501e049dbfd96671818fd82eab397c9e1586e303091f52ecd29c46545
+2026-10-28 12:50:44,431 [INFO]   Crossing ReLUs: 87.5% | CROWN K=0: 0.0% | EXH K=1: 75.4%
+2026-10-28 12:50:44,432 [INFO] 
+[DONE] Saved consolidated certification matrix JSON to: /root/workspace/workspace/03-Code/Projects/Legacy/BlackIce/ml-optimizer/results/full_run_execution/certificates_matrix/consolidated_ibp_crown_matrix.json
+2026-10-28 12:50:44,432 [INFO] [DONE] Full execution log available at: /root/workspace/workspace/03-Code/Projects/Legacy/BlackIce/ml-optimizer/results/full_run_execution/logs/certification_matrix.log
